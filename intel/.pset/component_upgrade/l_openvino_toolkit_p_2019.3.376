@@ -1,0 +1,7 @@
+ACCEPT_EULA=accept
+CONTINUE_WITH_OPTIONAL_ERROR=yes
+PSET_INSTALL_DIR=/opt/intel
+CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
+PSET_MODE=install
+SIGNING_ENABLED=yes
+COMPONENTS=;OPENVINO_BASE;DLDT_BASE;Environment variables;EULA;Inference Engine Development Kit;Inference Engine Python tools;Inference Engine Samples;Inference Engine RT;Inference Engine 3rd bins;Inference Engine RT Core;Inference Engine Runtime for Intel® CPU;Inference Engine Runtime for Intel® Processor Graphics;Inference Engine Runtime for Intel® Movidius™ VPU;Inference Engine Runtime for Intel® Movidius™ VPU;Inference Engine Runtime for Intel® Gaussian Neural Accelerator;Inference Engine Runtime for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs;Open Model Zoo;Model Optimizer Tool;Deep Learning Workbench;OpenCV generic;OpenCV etc;OpenCV* Libraries;OpenVX* Samples;OpenVX* Runtime;Open Model Zoo;Intel(R) Media SDK;Documentation;Intel® Graphics for Linux*;Uninstaller

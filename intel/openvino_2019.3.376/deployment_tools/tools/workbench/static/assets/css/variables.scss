@@ -1,0 +1,54 @@
+$wine: #6d0f3f;
+$berry: #88154f;
+$white: #ffffff;
+$table-background: #d0d8da;
+$highlight: #e6f3ff;
+$highlight-hover: #e6f3ff;
+$gray: #afbcc0;
+$light-gray: #eaeff1;
+$pale-gray: #f3f7f9;
+$gray-lines: #d0d8da;
+$blue: #0077c8;
+$pale-blue: #d3f4ff;
+$dark-gray: #505e67;
+$green-success: #6ca212;
+$red-danger: #e45e4e;
+$blue-gray: #818d91;
+
+$nav-font: 'Roboto-Regular';
+$roboto-regular: 'Roboto-Regular';
+$roboto-medium: 'Roboto-Medium';
+$roboto-light: 'Roboto-Light';
+$roboto-bold-italic: 'Roboto-BoldItalic';
+$roboto-bold: 'Roboto-Bold';
+$roboto-italic: 'Roboto-Italic';
+
+$font-family-list: (
+  $roboto-regular,
+  $roboto-medium,
+  $roboto-light,
+  $roboto-bold-italic,
+  $roboto-bold,
+  $roboto-italic
+);
+
+$font-size-config: 's' 12px, 'm' 14px, 'l' 18px, 'xl' 30px, 'h3' 16px, 'h2' 24px;
+$font-weight-default: normal;
+$font-style-default: normal;
+
+/* Generate font faces */
+@each $name in $font-family-list {
+  @font-face {
+    font-family: $name;
+    src: url('/assets/fonts/Roboto/#{$name}.ttf') format('truetype');
+    font-weight: $font-weight-default;
+    font-style: $font-style-default;
+  }
+}
+
+$field-error-message-height: 24px;
+
+$container-padding: 20px;
+
+$mat-field-padding-bottom: 1.34375em;
+$mat-field-margin-horizontal: 0.25em;

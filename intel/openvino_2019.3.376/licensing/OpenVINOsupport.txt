@@ -1,0 +1,12 @@
+﻿Package ID: 
+
+This package contains:
+        Intel(R) OpenVINO(TM) toolkit 2019 R3 for Windows* Target
+        Intel(R) OpenVINO(TM) toolkit 2019 R3 for Linux* Target
+
+-----------------
+Technical Support
+-----------------
+
+Need support? Go to https://software.intel.com/en-us/oneapi/support for your support options 
+

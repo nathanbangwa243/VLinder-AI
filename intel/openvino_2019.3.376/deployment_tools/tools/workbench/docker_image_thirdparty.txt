@@ -1,0 +1,239 @@
+This document contains the list of Third Party Software included with OpenVINO Deep Learning Workbench Docker Image,
+along with the license information.
+
+build-essential                - Informational list of build-essential packages
+License: GPL
+
+cpio                           - GNU cpio -- a program to manage archives of files
+License: GPL-3
+
+curl                           - command line tool for transferring data with URL syntax
+License: BSD-3-Clause BSD-4-Clause curl ISC other public-domain
+
+cmake                          - cross-platform, open-source make system
+License: Apache-2.0 BSD-2-clause BSD-3-clause BSD-4-clause GPL-2+with_exception GPL-3+with_exception ISC MIT-like zlib
+
+gstreamer1.0-plugins-base:amd6 - GStreamer plugins from the "base" set
+License: LGPL
+
+libavcodec-dev:amd64           - FFmpeg library with de/encoders for audio/video codecs - dev
+License: BSD-1-Clause BSD-3-Clause Expat GPL-2 GPL-2+ GPL-2+ with Avisynth exception GPL-3+ IJG ISC LGPL-2+ LGPL-2.1+ man-page public-domain Sundry Zlib
+
+libavformat-dev:amd64          - FFmpeg library with (de)muxers for multimedia containers - d
+License: BSD-1-Clause BSD-3-Clause Expat GPL-2 GPL-2+ GPL-2+ with Avisynth exception GPL-3+ IJG ISC LGPL-2+ LGPL-2.1+ man-page public-domain Sundry Zlib
+
+libcairo2-dev                  - Development files for the Cairo 2D graphics library
+License: LGPL-2.1
+
+libdrm-dev:amd64               - Userspace interface to kernel DRM services -- development fi
+License: MIT
+
+libglib2.0-dev                 - Development files for the GLib library
+License: LGPL
+
+lsb-release                    - Linux Standard Base version reporting utility
+License: BSD-3-clause GPL-2
+
+libgstreamer1.0-0:amd64        - Core GStreamer libraries and elements
+License: LGPL
+
+libgtk3.0-dev                  - development files for the GTK+ library
+License: LGPL-2
+
+libpango1.0-dev                - Development files for the Pango
+License: LGPL-2 LGPL-2.1
+
+libpng12-dev:amd64             - PNG library - development
+License: GPL-2
+
+libswscale-dev:amd64           - FFmpeg library for image scaling and various conversions - d
+License: BSD-1-Clause BSD-3-Clause Expat GPL-2 GPL-2+ GPL-2+ with Avisynth exception GPL-3+ IJG ISC LGPL-2+ LGPL-2.1+ man-page public-domain Sundry Zlib
+
+libtinfo5                      - shared low-level terminfo library (legacy version)
+License: MIT
+
+sudo                           - Provide limited super user privileges to specific users
+License: ISC-style
+
+unzip                          - De-archiver for .zip files
+License: BSD-like license
+
+wget                           - retrieves files from the web
+License: GFDL-1.2 GPL-3
+
+python3                        - interactive high-level object-oriented language (default pyt
+License: GPL-compatible GPL-compatible licenses
+
+python3-pip                    - alternative Python package installer - Python 3 version of t
+License: Expat public-domain
+
+python3-setuptools             - Python3 Distutils Enhancements
+License: GPL-compatible GPL-compatible licenses
+
+python3-dev                    - header files and a static library for Python (default)
+License: GPL-compatible GPL-compatible licenses
+
+postgresql                     - object-relational SQL database (supported version)
+License: GPL-2+
+
+postgresql-9.6                 - object-relational SQL database, version 9.6 server
+License: BSD-2-clause BSD-3-clause Custom-Unicode Custom-pg_dump Custom-regex PostgreSQL Tcl blf double-metaphone imath nagaysau-ishii rijndael
+
+postgresql-client-9.6          - front-end programs for PostgreSQL 9.6
+License: BSD-2-clause BSD-3-clause Custom-Unicode Custom-pg_dump Custom-regex PostgreSQL Tcl blf double-metaphone imath nagaysau-ishii rijndael
+
+postgresql-client-common       - manager for multiple PostgreSQL client versions
+License: GPL-2+
+
+postgresql-common              - PostgreSQL database-cluster manager
+License: GPL-2+
+
+postgresql-contrib             - additional facilities for PostgreSQL (supported version)
+License: GPL-2+
+
+postgresql-contrib-9.6         - additional facilities for PostgreSQL
+License: BSD-2-clause BSD-3-clause Custom-Unicode Custom-pg_dump Custom-regex PostgreSQL Tcl blf double-metaphone imath nagaysau-ishii rijndael
+
+erlang-nox                     - Erlang/OTP applications that don't require X Window System
+License: Apache-2.0 LGPL-2.1
+
+apt-transport-https            - https download transport for APT
+License: GPL-2
+
+rabbitmq-server                - Multi-protocol messaging broker
+License: MIT MPL-1.1
+
+autoconf                       - automatic configure script builder
+License: GFDL-1.3+ GPL-2+ GPL-2+ with Autoconf exception GPL-3+ GPL-3+ with Autoconf exception GPL-3+ with Texinfo exception MIT-X-Consortium no-modification other permissive permissive-long-disclaimer permissive-short-disclaimer permissive-without-disclaimer permissive-without-notices-or-disclaimer
+
+automake                       - Tool for generating GNU Standards-compliant Makefiles
+License: GFDL-NIV-1.3+ GPL-2+ GPL-3+ permissive
+
+libtool                        - Generic library support script
+License: GFDL GPL
+
+ocl-icd-libopencl1:amd64       - Generic OpenCL ICD Loader
+License: BSD-2-Clause
+
+python3-celery                 - async task/job queue based on message passing (Python3 versi
+License: BSD-2-clause CC-BY-SA-4 PSF-2
+
+python3-flask                  - micro web framework based on Werkzeug, Jinja2 and good inten
+License: BSD-3-clause
+
+python3-flask-babelex          - Adds i18n/l10n support to Flask applications
+License: MIT
+
+python3-flask-gravatar         - Extension for Flask to make usage of Gravatar service
+License: BSD-3-clause
+
+python3-flask-htmlmin          - Minimize render templates html
+License: BSD-3-clause
+
+python3-flask-migrate          - SQLAlchemy migrations for Flask using Alembic and Python 3
+License: MIT
+
+python3-flask-paranoid         - Simple user session protection
+License: MIT
+
+python3-flask-principal        - identity management for Flask
+License: Expat GPL-2+
+
+python3-flask-script           - set of utilities for use with the Flask framework
+License: BSD-3-Clause
+
+python3-flask-security         - Simple security for Flask apps (Python 3)
+License: MIT
+
+python3-flask-sqlalchemy       - adds SQLAlchemy support to your Flask application
+License: BSD-3-Clause
+
+python3-flaskext.wtf           - Simple integration of Flask and WTForms (Python 3)
+License: BSD-3
+
+python-numpy                   - Numerical Python adds a fast array facility to the Python la
+License: public domain
+
+rpm2cpio                       - tool to convert RPM package to CPIO archive
+License: BSD-3-clause GPL-2+ GPL-2+ or LGPL-2+ LGPL-2+
+
+libusb                         - library that provides generic access to USB devices
+License: GNU Lesser General Public License
+
+tensorflow                     - free and open-source software library for dataflow and differentiable programming across a range of tasks.
+License: Apache License 2.0
+
+mxnet                          -  open-source deep learning software framework, used to train, and deploy deep neural networks.
+License: Apache License 2.0
+
+networkx                       -  Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks
+License: BSD license
+
+protobuf                       - Protocol Buffers (a.k.a., protobuf) are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data.
+License: BSD license
+
+onnx                           - open ecosystem that empowers AI developers to choose the right tools as their project evolves
+License: MIT License
+
+defusedxml                     - defusing XML bombs and other exploits
+License: PSF License
+
+eventlet                       - concurrent networking library for Python that allows you to change how you run your code, not how you write it
+License: MIT License
+
+flask-restful                  - extension for Flask that adds support for quickly building REST APIs
+License: BSD license
+
+flask-socketio                 - library gives Flask applications access to low latency bi-directional communications between the clients and the server
+License: MIT License
+
+gunicorn                       - Python WSGI HTTP Server for UNIX
+License: MIT License
+
+greenlet                       - spin-off of Stackless, a version of CPython that supports micro-threads called “tasklets”
+License: MIT License
+
+pg8000                         - Pure-Python interface to the PostgreSQL database engine
+License: BSD license
+
+pyyaml                         - YAML parser and emitter for Python
+License: MIT License
+
+cython                         - source code translator based on Pyrex
+License: Apache License
+
+tqdm                           - Python package for displaying progress bar in console
+License: MIT License
+
+yamlloader                     - module provides loaders and dumpers for PyYAML
+License: MIT License
+
+pillow                         - friendly PIL fork
+License: PIL Software License
+
+scikit-learn                   - Python module for machine learning built on top of SciPy
+License: New BSD License
+
+scipy                          - open-source software for mathematics, science, and engineering
+License: New BSD License
+
+py-cpuinfo                     - gets CPU info with pure Python
+License: MIT License
+
+shapely                        - manipulation and analysis of geometric objects in the Cartesian plane
+License: BSD license
+
+nibabel                        - read / write access to some common neuroimaging file formats
+License: BSD license
+
+progress                       - easy progress reporting for Python
+License: ISC License
+
+opencv-python                  - anofficial pre-built OpenCV packages for Python.
+License: BSD license
+
+xmltodict                      - Python module that makes working with XML feel like you are working with
+License: MIT License
+
+test-generator                 - Python packafe for generating test methods for nose while still using unittest.
+License: ISC License

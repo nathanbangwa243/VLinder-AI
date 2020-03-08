@@ -1,0 +1,16 @@
+{
+  "ACCURACY_ERROR": "Error occurred while measuring accuracy",
+  "COMPOUND_INFERENCE_ERROR": "Error occurred while running inference",
+  "DATABASE_ERROR":  "Database update error",
+  "DATASET_GENERATION_ERROR": "Error occurred while generating dataset",
+  "DEFECTIVE_CONFIG_ERROR":  "Received invalid request data.",
+  "GENERAL_SERVER_ERROR": "General server error",
+  "INT8AUTOTUNE_ERROR":  "Error occurred during Int 8 optimization",
+  "MODEL_DOWNLOADER_ERROR": "Error occurred during model download",
+  "MODEL_OPTIMIZER_ERROR":  "Error occurred while optimizing model",
+  "REMOVED_DATASET": "Error with uploading dataset",
+  "REMOVED_MODEL":  "Error with uploading model",
+  "REMOVED_UPLOAD": "Upload has been cancelled",
+  "WINOGRAD_AUTOTUNE_ERROR":  "Error occurred during Winograd optimization",
+  "MODEL_ANALYZER_ERROR":  "Error occurred while retrieving model statistics (GFLOP, IOP etc.)"
+}

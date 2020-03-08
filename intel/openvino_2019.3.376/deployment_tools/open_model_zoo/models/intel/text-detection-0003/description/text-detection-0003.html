@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<link rel="stylesheet" href="../../intel_styles.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+    <div id="bannerblock">
+      <img src="../../intel_logo.png" class="intellogo">
+      <h1 class="title">Overview of OpenVINO&trade; toolkit Pre-trained Models</h1>
+    </div>
+  </div>
+<div id="contentblock">
+<h1 id="text-detection-0003">text-detection-0003</h1>
+<h2 id="use-case-and-high-level-description">Use Case and High-Level Description</h2>
+<p>Text detector based on <a href="https://arxiv.org/pdf/1801.01315.pdf">PixelLink</a> architecture with <a href="https://arxiv.org/pdf/1801.04381.pdf">MobileNetV2-like</a> as a backbone for indoor/outdoor scenes.</p>
+<h2 id="example">Example</h2>
+<div class="figure">
+<img src="./text-detection-0003.png" />
+
+</div>
+<h2 id="specification">Specification</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">F-measure (Harmonic mean of precision and recall on ICDAR2015)</td>
+<td align="left">82.12%</td>
+</tr>
+<tr class="even">
+<td align="left">GFlops</td>
+<td align="left">51.256</td>
+</tr>
+<tr class="odd">
+<td align="left">MParams</td>
+<td align="left">6.747</td>
+</tr>
+<tr class="even">
+<td align="left">Source framework</td>
+<td align="left">TensorFlow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance">Performance</h2>
+<h2 id="inputs">Inputs</h2>
+<ol style="list-style-type: decimal">
+<li><p>name: &quot;input&quot; , shape: [1x3x768x1280] - An input image in the format [BxCxHxW], where:</p>
+<ul>
+<li>B - batch size</li>
+<li>C - number of channels</li>
+<li>H - image height</li>
+<li>W - image width</li>
+</ul></li>
+</ol>
+<p>Expected color order - BGR.</p>
+<h2 id="outputs">Outputs</h2>
+<ol style="list-style-type: decimal">
+<li>The net outputs two blobs. Refer to <a href="https://arxiv.org/pdf/1801.01315.pdf">PixelLink</a> and demos for details.
+<ul>
+<li>[1x2x192x320] - logits related to text/no-text classification for each pixel.</li>
+<li>[1x16x192x320] - logits related to linkage between pixels and their neighbors.</li>
+</ul></li>
+</ol>
+<h2 id="legal-information">Legal Information</h2>
+<p>[*] Other names and brands may be claimed as the property of others.</p>
+</div>
+</body>
+</html>

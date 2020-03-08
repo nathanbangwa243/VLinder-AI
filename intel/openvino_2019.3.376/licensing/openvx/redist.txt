@@ -1,0 +1,548 @@
+This text file is the file (e.g., redist.txt, etc) specified in the accompanying
+End User License Agreement for the Intel(R) Software Development Products ("Agreement").
+All capitalized terms used but not defined in this text file have the same meaning as specified in the Agreement.
+
+The Redistributables files are listed below, and are subject to all of the terms and conditions of the Agreement,
+including without limitation Section 2.1.A.(4).
+
+Also included as Redistributables are executables and shared and static libraries you create by linking your program
+with libraries provided by Intel as part of the Materials for this product but which are not listed in this redist.txt file (Libraries);
+provided that you do not redistribute those Intel provided libraries or any other portion of those Intel provided libraries in any other way.
+
+YOU MAY NOT REDISTRIBUTE THESE MATERIALS UNDER AN EVALUATION LICENSE
+
+################################################################################
+###   OpenVX* for Windows*
+################################################################################
+<install_root>/licensing/openvx/redist.txt
+<install_root>/openvx/bin/iap.dll
+<install_root>/openvx/bin/iap_clplugin.dll
+<install_root>/openvx/bin/iap_openvx.dll
+<install_root>/openvx/bin/iap_openvx_cpu.dll
+<install_root>/openvx/bin/iap_openvx_gpu.dll
+<install_root>/openvx/bin/libmmd.dll
+<install_root>/openvx/bin/openvx.dll
+<install_root>/openvx/bin/tbb.dll
+<install_root>/openvx/bin/tbbmalloc.dll
+
+<install_root>/openvx/samples
+|   CMakeLists.txt
+|   README
+|   version.txt
+|   
++---cmake
+|       FindIntelOpenVX.cmake
+|       FindINTEL_ITT.cmake
+|       FindKhronosOpenVX.cmake
+|       FindMO.cmake
+|       FindOpenVX.cmake
+|       FindSampleOpenCV.cmake
+|       options.cmake
+|       Utils.cmake
+|       
+\---samples
+    |   CMakeLists.txt
+    |   cv_samples.config
+    |   
+    +---auto_contrast
+    |       auto_contrast.cpp
+    |       CMakeLists.txt
+    |       low_contrast_vga.jpg
+    |       README
+    |       sample_auto_contrast_user_guide.pdf
+    |       
+    +---camera_tampering
+    |       camera_tampering.cpp
+    |       camera_tampering_common.cpp
+    |       camera_tampering_common.h
+    |       camera_tampering_core.cpp
+    |       camera_tampering_core.h
+    |       camera_tampering_user_nodes_lib.cpp
+    |       camera_tampering_user_nodes_lib.h
+    |       camera_tampering_user_nodes_module.cpp
+    |       CMakeLists.txt
+    |       cmdoptions.cpp
+    |       cmdoptions.hpp
+    |       ctd_md.mp4
+    |       cvsdkworkload.h
+    |       hetero.config.default.txt
+    |       hetero.config.gpu-offload.txt
+    |       libwl_ctd.cpp
+    |       libwl_ctd.h
+    |       README
+    |       sample_camera_tampering_user_guide.pdf
+    |       
+    +---census_transform
+    |       CMakeLists.txt
+    |       main.cpp
+    |       README
+    |       sample_census_transform_user_guide.pdf
+    |       toy_flower.mp4
+    |       vx_censustransformtiled_lib.c
+    |       vx_censustransformtiled_module.c
+    |       vx_censustransform_impl.c
+    |       vx_censustransform_lib.c
+    |       vx_censustransform_module.c
+    |       vx_censustransform_opencl_impl.cl
+    |       vx_censustransform_opencl_lib.cpp
+    |       vx_censustransform_opencl_module.cpp
+    |       vx_user_census_nodes.h
+    |       
+    +---color_copy_pipeline
+    |   |   CMakeLists.txt
+    |   |   cmykhalftone.h
+    |   |   lab2cmykparams_17x17x17.h
+    |   |   lab2cmykparams_33x33x33.h
+    |   |   lightnessdarknesscontrast_params.h
+    |   |   low_contrast_5120x6592_I444.raw
+    |   |   main.cpp
+    |   |   pipelinecontrol.cpp
+    |   |   pipelinecontrol.h
+    |   |   README
+    |   |   rgb2labparams_17x17x17.h
+    |   |   sample_color_copy_user_guide.pdf
+    |   |   vxbackgroundsuppress.cpp
+    |   |   vxbackgroundsuppress_lib.cpp
+    |   |   vxcalculategradient.cpp
+    |   |   vxcalculategradient_lib.cpp
+    |   |   vxgainoffset10.cpp
+    |   |   vxgainoffset10_lib.cpp
+    |   |   vxgainoffset12.cpp
+    |   |   vxgainoffset12_lib.cpp
+    |   |   vxipahalftone.cpp
+    |   |   vxipahalftone_lib.cpp
+    |   |   vxneutralpixeldetection.cpp
+    |   |   vxneutralpixeldetection_lib.cpp
+    |   |   vxproduceedgek.cpp
+    |   |   vxproduceedgek_lib.cpp
+    |   |   vxpublishkernels.cpp
+    |   |   vxremovefringe.cpp
+    |   |   vxremovefringe_lib.cpp
+    |   |   vxremovefringe_opencl_impl.cl
+    |   |   vxremovefringe_opencl_lib.cpp
+    |   |   vxremovefringe_opencl_module.cpp
+    |   |   vxsimplethreshold.cpp
+    |   |   vxsimplethreshold_lib.cpp
+    |   |   vxsymm7x7_opencl_impl.cl
+    |   |   vxsymm7x7_opencl_lib.cpp
+    |   |   vxsymm7x7_opencl_module.cpp
+    |   |   vx_user_pipeline_nodes.h
+    |   |   
+    |   \---ipa
+    |           doubler.c
+    |           double_c.h
+    |           double_sse.h
+    |           gradient.c
+    |           gradient_c.h
+    |           gradient_sse.h
+    |           halftone.c
+    |           halftone_c.h
+    |           halftone_sse.h
+    |           ipa-impl.h
+    |           ipa.c
+    |           ipa.h
+    |           rescale.c
+    |           rescale_c.h
+    |           rescale_sse.h
+    |           rotate.c
+    |           rotate_c.h
+    |           rotate_sse.h
+    |           transparency.c
+    |           transparency_c.h
+    |           transparency_sse.h
+    |           
+    +---common
+    |   |   CMakeLists.txt
+    |   |   
+    |   +---include
+    |   |   \---intel
+    |   |       +---vx_samples
+    |   |       |       basic.hpp
+    |   |       |       cmdparser.hpp
+    |   |       |       cmdparsercfgfile.hpp
+    |   |       |       cnn_helper.hpp
+    |   |       |       helper.hpp
+    |   |       |       hetero.hpp
+    |   |       |       perfprof.hpp
+    |   |       |       
+    |   |       \---workload_api
+    |   |               cvsdkworkload.h
+    |   |               
+    |   \---src
+    |           basic.cpp
+    |           cmdparser.cpp
+    |           cmdparsercfgfile.cpp
+    |           cnn_helper.cpp
+    |           helper.cpp
+    |           hetero.cpp
+    |           perfprof.cpp
+    |           
+    +---gstovx_plugin
+    |       CMakeLists.txt
+    |       gstovxfilter.cpp
+    |       gstovxfilter.hpp
+    |       README
+    |       sample_gstovx_interop_user_guide.pdf
+    |       vx_pvlface_lib.cpp
+    |       vx_pvlface_module.cpp
+    |       vx_user_pvlface_nodes.h
+    |       
+    +---hetero_basic
+    |       CMakeLists.txt
+    |       hetero_basic.cpp
+    |       README
+    |       sample_hetero_basic_user_guide.pdf
+    |       toy_flower_512x512.mp4
+    |       
+    +---kernel_enumerator
+    |       CMakeLists.txt
+    |       kernel_enumerator.cpp
+    |       README
+    |       
+    +---lane_detection
+    |       CMakeLists.txt
+    |       collect_lane_marks.cpp
+    |       collect_lane_marks.hpp
+    |       lane_detection.cpp
+    |       lane_detection.graphml
+    |       lane_detection_nodes.map
+    |       lane_detection_user_nodes_module.cpp
+    |       README
+    |       road_lane.mp4
+    |       sample_lane_detection_user_guide.pdf
+    |       
+    +---motion_detection
+    |       CMakeLists.txt
+    |       cmdoptions.cpp
+    |       cmdoptions.hpp
+    |       cvsdkworkload.h
+    |       hetero.config.cpu-all.txt
+    |       hetero.config.default.txt
+    |       libwl_md.cpp
+    |       libwl_md.h
+    |       motion_detection.cpp
+    |       motion_detection_common.cpp
+    |       motion_detection_common.h
+    |       motion_detection_core.cpp
+    |       motion_detection_core.h
+    |       motion_detection_user_nodes_lib.cpp
+    |       motion_detection_user_nodes_lib.h
+    |       motion_detection_user_nodes_module.cpp
+    |       README
+    |       sample_motion_detection_user_guide.pdf
+    |       VID_640x360.mp4
+    |       
+    +---ocl_custom_kernel
+    |       CMakeLists.txt
+    |       ocl_custom_kernel.cpp
+    |       README
+    |       sample_ocl_custom_kernel_user_guide.pdf
+    |       source.cl
+    |       toy_flower.mp4
+    |       
+    \---video_stabilization
+            CMakeLists.txt
+            cmdoptions.cpp
+            cmdoptions.hpp
+            debug_visualization_lib.cpp
+            debug_visualization_lib.hpp
+            hetero.config.cpu-all.txt
+            hetero.config.cpu-convert-extract.txt
+            hetero.config.cpu-harris-pyramid.txt
+            hetero.config.cpu-harris.txt
+            hetero.config.cpu-optical-flow.txt
+            hetero.config.cpu-pyramid.txt
+            hetero.config.gpu-all.txt
+            hetero.config.gpu-first-part.txt
+            hetero.config.gpu-harris-2-warps.txt
+            hetero.config.gpu-harris-3-warps.txt
+            hetero.config.gpu-harris-gaussian-optical.txt
+            hetero.config.gpu-harris-warp.txt
+            hetero.config.gpu-last-part.txt
+            README
+            sample_video_stabilization_user_guide.pdf
+            toy_flower.mp4
+            video_stabilization.cpp
+            video_stabilization.hpp
+            video_stabilization_core.cpp
+            video_stabilization_core.h
+            video_stabilization_opencv.cpp
+            video_stabilization_openvx.cpp
+            video_stabilization_user_nodes_lib.cpp
+            video_stabilization_user_nodes_lib.h
+            video_stabilization_user_nodes_module.cpp
+
+################################################################################
+###   OpenVX* for Linux*
+################################################################################
+<install_root>/licensing/openvx/redist.txt
+<install_root>/openvx/lib/libiap_clplugin.so.1.0 -> libiap_clplugin.so.1.1.0
+<install_root>/openvx/lib/libiap_clplugin.so.1.1.0
+<install_root>/openvx/lib/libiap_mkldnnplugin.so
+<install_root>/openvx/lib/libiap_openvx_cpu.so -> libiap_openvx_cpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_cpu.so.1.0 -> libiap_openvx_cpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_cpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_gpu.so -> libiap_openvx_gpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_gpu.so.1.0 -> libiap_openvx_gpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_gpu.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_mkldnn.so -> libiap_openvx_mkldnn.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_mkldnn.so.1.0 -> libiap_openvx_mkldnn.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx_mkldnn.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx.so -> libiap_openvx.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx.so.1.0 -> libiap_openvx.so.1.1.0
+<install_root>/openvx/lib/libiap_openvx.so.1.1.0
+<install_root>/openvx/lib/libiap.so -> libiap.so.1.8
+<install_root>/openvx/lib/libiap.so.1.8
+<install_root>/openvx/lib/libiomp5.so
+<install_root>/openvx/lib/libopenvx.so -> libiap_openvx.so
+<install_root>/openvx/lib/libtbbmalloc.so.2
+<install_root>/openvx/lib/libtbb.so.2
+
+<install_root>/openvx/samples
+|   CMakeLists.txt
+|   README
+|   version.txt
+|   
++---cmake
+|       FindIntelOpenVX.cmake
+|       FindINTEL_ITT.cmake
+|       FindKhronosOpenVX.cmake
+|       FindMO.cmake
+|       FindOpenVX.cmake
+|       FindSampleOpenCV.cmake
+|       options.cmake
+|       Utils.cmake
+|       
+\---samples
+    |   CMakeLists.txt
+    |   cv_samples.config
+    |   
+    +---auto_contrast
+    |       auto_contrast.cpp
+    |       CMakeLists.txt
+    |       low_contrast_vga.jpg
+    |       README
+    |       sample_auto_contrast_user_guide.pdf
+    |       
+    +---camera_tampering
+    |       camera_tampering.cpp
+    |       camera_tampering_common.cpp
+    |       camera_tampering_common.h
+    |       camera_tampering_core.cpp
+    |       camera_tampering_core.h
+    |       camera_tampering_user_nodes_lib.cpp
+    |       camera_tampering_user_nodes_lib.h
+    |       camera_tampering_user_nodes_module.cpp
+    |       CMakeLists.txt
+    |       cmdoptions.cpp
+    |       cmdoptions.hpp
+    |       ctd_md.mp4
+    |       cvsdkworkload.h
+    |       hetero.config.default.txt
+    |       hetero.config.gpu-offload.txt
+    |       libwl_ctd.cpp
+    |       libwl_ctd.h
+    |       README
+    |       sample_camera_tampering_user_guide.pdf
+    |       
+    +---census_transform
+    |       CMakeLists.txt
+    |       main.cpp
+    |       README
+    |       sample_census_transform_user_guide.pdf
+    |       toy_flower.mp4
+    |       vx_censustransformtiled_lib.c
+    |       vx_censustransformtiled_module.c
+    |       vx_censustransform_impl.c
+    |       vx_censustransform_lib.c
+    |       vx_censustransform_module.c
+    |       vx_censustransform_opencl_impl.cl
+    |       vx_censustransform_opencl_lib.cpp
+    |       vx_censustransform_opencl_module.cpp
+    |       vx_user_census_nodes.h
+    |       
+    +---color_copy_pipeline
+    |   |   CMakeLists.txt
+    |   |   cmykhalftone.h
+    |   |   lab2cmykparams_17x17x17.h
+    |   |   lab2cmykparams_33x33x33.h
+    |   |   lightnessdarknesscontrast_params.h
+    |   |   low_contrast_5120x6592_I444.raw
+    |   |   main.cpp
+    |   |   pipelinecontrol.cpp
+    |   |   pipelinecontrol.h
+    |   |   README
+    |   |   rgb2labparams_17x17x17.h
+    |   |   sample_color_copy_user_guide.pdf
+    |   |   vxbackgroundsuppress.cpp
+    |   |   vxbackgroundsuppress_lib.cpp
+    |   |   vxcalculategradient.cpp
+    |   |   vxcalculategradient_lib.cpp
+    |   |   vxgainoffset10.cpp
+    |   |   vxgainoffset10_lib.cpp
+    |   |   vxgainoffset12.cpp
+    |   |   vxgainoffset12_lib.cpp
+    |   |   vxipahalftone.cpp
+    |   |   vxipahalftone_lib.cpp
+    |   |   vxneutralpixeldetection.cpp
+    |   |   vxneutralpixeldetection_lib.cpp
+    |   |   vxproduceedgek.cpp
+    |   |   vxproduceedgek_lib.cpp
+    |   |   vxpublishkernels.cpp
+    |   |   vxremovefringe.cpp
+    |   |   vxremovefringe_lib.cpp
+    |   |   vxremovefringe_opencl_impl.cl
+    |   |   vxremovefringe_opencl_lib.cpp
+    |   |   vxremovefringe_opencl_module.cpp
+    |   |   vxsimplethreshold.cpp
+    |   |   vxsimplethreshold_lib.cpp
+    |   |   vxsymm7x7_opencl_impl.cl
+    |   |   vxsymm7x7_opencl_lib.cpp
+    |   |   vxsymm7x7_opencl_module.cpp
+    |   |   vx_user_pipeline_nodes.h
+    |   |   
+    |   \---ipa
+    |           doubler.c
+    |           double_c.h
+    |           double_sse.h
+    |           gradient.c
+    |           gradient_c.h
+    |           gradient_sse.h
+    |           halftone.c
+    |           halftone_c.h
+    |           halftone_sse.h
+    |           ipa-impl.h
+    |           ipa.c
+    |           ipa.h
+    |           rescale.c
+    |           rescale_c.h
+    |           rescale_sse.h
+    |           rotate.c
+    |           rotate_c.h
+    |           rotate_sse.h
+    |           transparency.c
+    |           transparency_c.h
+    |           transparency_sse.h
+    |           
+    +---common
+    |   |   CMakeLists.txt
+    |   |   
+    |   +---include
+    |   |   \---intel
+    |   |       +---vx_samples
+    |   |       |       basic.hpp
+    |   |       |       cmdparser.hpp
+    |   |       |       cmdparsercfgfile.hpp
+    |   |       |       cnn_helper.hpp
+    |   |       |       helper.hpp
+    |   |       |       hetero.hpp
+    |   |       |       perfprof.hpp
+    |   |       |       
+    |   |       \---workload_api
+    |   |               cvsdkworkload.h
+    |   |               
+    |   \---src
+    |           basic.cpp
+    |           cmdparser.cpp
+    |           cmdparsercfgfile.cpp
+    |           cnn_helper.cpp
+    |           helper.cpp
+    |           hetero.cpp
+    |           perfprof.cpp
+    |           
+    +---gstovx_plugin
+    |       CMakeLists.txt
+    |       gstovxfilter.cpp
+    |       gstovxfilter.hpp
+    |       README
+    |       sample_gstovx_interop_user_guide.pdf
+    |       vx_pvlface_lib.cpp
+    |       vx_pvlface_module.cpp
+    |       vx_user_pvlface_nodes.h
+    |       
+    +---hetero_basic
+    |       CMakeLists.txt
+    |       hetero_basic.cpp
+    |       README
+    |       sample_hetero_basic_user_guide.pdf
+    |       toy_flower_512x512.mp4
+    |       
+    +---kernel_enumerator
+    |       CMakeLists.txt
+    |       kernel_enumerator.cpp
+    |       README
+    |       
+    +---lane_detection
+    |       CMakeLists.txt
+    |       collect_lane_marks.cpp
+    |       collect_lane_marks.hpp
+    |       lane_detection.cpp
+    |       lane_detection.graphml
+    |       lane_detection_nodes.map
+    |       lane_detection_user_nodes_module.cpp
+    |       README
+    |       road_lane.mp4
+    |       sample_lane_detection_user_guide.pdf
+    |       
+    +---motion_detection
+    |       CMakeLists.txt
+    |       cmdoptions.cpp
+    |       cmdoptions.hpp
+    |       cvsdkworkload.h
+    |       hetero.config.cpu-all.txt
+    |       hetero.config.default.txt
+    |       libwl_md.cpp
+    |       libwl_md.h
+    |       motion_detection.cpp
+    |       motion_detection_common.cpp
+    |       motion_detection_common.h
+    |       motion_detection_core.cpp
+    |       motion_detection_core.h
+    |       motion_detection_user_nodes_lib.cpp
+    |       motion_detection_user_nodes_lib.h
+    |       motion_detection_user_nodes_module.cpp
+    |       README
+    |       sample_motion_detection_user_guide.pdf
+    |       VID_640x360.mp4
+    |       
+    +---ocl_custom_kernel
+    |       CMakeLists.txt
+    |       ocl_custom_kernel.cpp
+    |       README
+    |       sample_ocl_custom_kernel_user_guide.pdf
+    |       source.cl
+    |       toy_flower.mp4
+    |       
+    \---video_stabilization
+            CMakeLists.txt
+            cmdoptions.cpp
+            cmdoptions.hpp
+            debug_visualization_lib.cpp
+            debug_visualization_lib.hpp
+            hetero.config.cpu-all.txt
+            hetero.config.cpu-convert-extract.txt
+            hetero.config.cpu-harris-pyramid.txt
+            hetero.config.cpu-harris.txt
+            hetero.config.cpu-optical-flow.txt
+            hetero.config.cpu-pyramid.txt
+            hetero.config.gpu-all.txt
+            hetero.config.gpu-first-part.txt
+            hetero.config.gpu-harris-2-warps.txt
+            hetero.config.gpu-harris-3-warps.txt
+            hetero.config.gpu-harris-gaussian-optical.txt
+            hetero.config.gpu-harris-warp.txt
+            hetero.config.gpu-last-part.txt
+            README
+            sample_video_stabilization_user_guide.pdf
+            toy_flower.mp4
+            video_stabilization.cpp
+            video_stabilization.hpp
+            video_stabilization_core.cpp
+            video_stabilization_core.h
+            video_stabilization_opencv.cpp
+            video_stabilization_openvx.cpp
+            video_stabilization_user_nodes_lib.cpp
+            video_stabilization_user_nodes_lib.h
+            video_stabilization_user_nodes_module.cpp
+
+* Other names and brands may be claimed as the property of others.

@@ -1,0 +1,18 @@
+#!/bin/sh
+RPM_INSTALL_PREFIX=/opt/intel
+
+PREFIX=${RPM_INSTALL_PREFIX}
+
+SETTINGS_DIR="$HOME/intel/.pset/$(hostname)/settings"
+if [ "0" = "$(id -u)" -a -w "/dev" ]; then
+    SETTINGS_DIR="/opt/intel/.pset/settings"
+fi
+mkdir -p "${SETTINGS_DIR}" 2>&1 1>/dev/null
+touch "${SETTINGS_DIR}/1571685660188" 2>&1 1>/dev/null
+
+RPM_FILENAME="intel-openvino-base-pset-2019.3.376-2019.3-376.noarch.rpm"
+DB_FILE="$SETTINGS_DIR/cached_uninstaller.db"
+if sed -i.bk "/^${RPM_FILENAME}=.*/d" $DB_FILE 2>/dev/null; then
+    rm -rf "${DB_FILE}.bk" 2>&1 1>/dev/null
+fi
+echo "${RPM_FILENAME}=//openvino_2019.3.376/openvino_toolkit_uninstaller" >> $DB_FILE

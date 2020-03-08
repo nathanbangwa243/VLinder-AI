@@ -1,0 +1,98 @@
+------------------------------------------------------------------------------
+                     OpenVX* Runtime Information Sample Utility
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+
+  1 - Sample Utility Description
+  2 - System Requirements for Building and Running the Utility
+  3 - Sample Utility Directory
+
+
+1 Sample Utility Description
+------------------------------------------------------------------------------
+
+This command line sample utility demonstrates how to query the list of OpenVX*
+extensions, supported targets and the list of kernels from the OpenVX* runtime.
+
+The output is divided into three sections:
+
+  - list of OpenVX* extensions reported by the vxQueryContext function with
+        VX_CONTEXT_ATTRIBUTE_EXTENSIONS parameter;
+  - list of supported targets queried by Targets experimental API;
+  - table with kernels reported by the vxQueryContext with
+        VX_CONTEXT_ATTRIBUTE_UNIQUE_KERNEL_TABLE parameter.
+
+For each kernel in the table from the last section, the utility prints: 
+
+  - the kernel enum ID, which can be used in the vxGetKernelByEnum;
+  - kernel name as it appears in the OpenVX* run-time or tools like VAD (don't
+        mix with a name of vx-function for a node). The name can be used in
+        the vxGetKernelByName function;
+  - the list of targets where this kernel is available;
+  - the list of parameters with properties (direction, type and state as
+        reported by vxQueryParameter).
+
+
+
+2 System Requirements for Building and Running the Sample Utility
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+
+3 Sample Utility Directory
+------------------------------------------------------------------------------
+
+The sample directory has the following structure:
+
+ -- kernel_enumerator
+    |
+    |-- CMakeLists.txt          (CMake file for the sample)
+    |
+    |-- kernel_enumerator.cpp   (source code of the sample)
+    |
+    `-- README                  (this readme file)
+
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual 
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a 
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in 
+development.  All information provided here is subject to change without 
+notice. Contact your Intel representative to obtain the latest forecast, 
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as 
+errata which may cause deviations from published specifications. Current 
+characterized errata are available on request. 
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S. 
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

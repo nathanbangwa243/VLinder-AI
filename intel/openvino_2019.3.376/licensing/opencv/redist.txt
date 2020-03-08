@@ -1,0 +1,1 @@
+OpenCV library is released in terms of BSD license and content is redistributable: <install_root>\opencv\*

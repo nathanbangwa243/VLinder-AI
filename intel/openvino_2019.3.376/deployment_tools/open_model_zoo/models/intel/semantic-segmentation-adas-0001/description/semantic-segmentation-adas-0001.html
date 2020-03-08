@@ -1,0 +1,177 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<link rel="stylesheet" href="../../intel_styles.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+    <div id="bannerblock">
+      <img src="../../intel_logo.png" class="intellogo">
+      <h1 class="title">Overview of OpenVINO&trade; toolkit Pre-trained Models</h1>
+    </div>
+  </div>
+<div id="contentblock">
+<h1 id="semantic-segmentation-adas-0001">semantic-segmentation-adas-0001</h1>
+<h2 id="use-case-and-high-level-description">Use Case and High-Level Description</h2>
+<p>This is a segmentation network to classify each pixel into 20 classes: - road - sidewalk - building - wall - fence - pole - traffic light - traffic sign - vegetation - terrain - sky - person - rider - car - truck - bus - train - motorcycle - bicycle - ego-vehicle</p>
+<h2 id="example">Example</h2>
+<div class="figure">
+<img src="./semantic-segmentation-adas-0001.png" />
+
+</div>
+<h2 id="specification">Specification</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Image size</td>
+<td align="left">2048x1024</td>
+</tr>
+<tr class="even">
+<td align="left">GFlops</td>
+<td align="left">58.572</td>
+</tr>
+<tr class="odd">
+<td align="left">MParams</td>
+<td align="left">6.686</td>
+</tr>
+<tr class="even">
+<td align="left">Source framework</td>
+<td align="left">PyTorch*</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accuracy">Accuracy</h2>
+<p>The quality metrics calculated on 2000 images:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Label</th>
+<th align="left">IOU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>mean</strong></td>
+<td align="left"><strong>0.6907</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Road</td>
+<td align="left">0.910379</td>
+</tr>
+<tr class="odd">
+<td align="left">Sidewalk</td>
+<td align="left">0.630676</td>
+</tr>
+<tr class="even">
+<td align="left">Building</td>
+<td align="left">0.860139</td>
+</tr>
+<tr class="odd">
+<td align="left">Wall</td>
+<td align="left">0.424166</td>
+</tr>
+<tr class="even">
+<td align="left">Fence</td>
+<td align="left">0.592632</td>
+</tr>
+<tr class="odd">
+<td align="left">Pole</td>
+<td align="left">0.559078</td>
+</tr>
+<tr class="even">
+<td align="left">Traffic Light</td>
+<td align="left">0.654779</td>
+</tr>
+<tr class="odd">
+<td align="left">Traffic Sign</td>
+<td align="left">0.648217</td>
+</tr>
+<tr class="even">
+<td align="left">Vegetation</td>
+<td align="left">0.882593</td>
+</tr>
+<tr class="odd">
+<td align="left">Terrain</td>
+<td align="left">0.620521</td>
+</tr>
+<tr class="even">
+<td align="left">Sky</td>
+<td align="left">0.976889</td>
+</tr>
+<tr class="odd">
+<td align="left">Person</td>
+<td align="left">0.711653</td>
+</tr>
+<tr class="even">
+<td align="left">Rider</td>
+<td align="left">0.612787</td>
+</tr>
+<tr class="odd">
+<td align="left">Car</td>
+<td align="left">0.877892</td>
+</tr>
+<tr class="even">
+<td align="left">Truck</td>
+<td align="left">0.674829</td>
+</tr>
+<tr class="odd">
+<td align="left">Bus</td>
+<td align="left">0.743752</td>
+</tr>
+<tr class="even">
+<td align="left">Train</td>
+<td align="left">0.358641</td>
+</tr>
+<tr class="odd">
+<td align="left">Motorcycle</td>
+<td align="left">0.600701</td>
+</tr>
+<tr class="even">
+<td align="left">Bicycle</td>
+<td align="left">0.622246</td>
+</tr>
+<tr class="odd">
+<td align="left">Ego-Vehicle</td>
+<td align="left">0.852932</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>IOU=TP/(TP+FN+FP)</code>, where:</li>
+<li><code>TP</code> - number of true positive pixels for given class</li>
+<li><code>FN</code> - number of false negative pixels for given class</li>
+<li><code>FP</code> - number of false positive pixels for given class</li>
+</ul>
+<h2 id="performance">Performance</h2>
+<h2 id="inputs">Inputs</h2>
+<p>The blob with BGR image in format: [B, C=3, H=1024, W=2048], where:</p>
+<ul>
+<li>B - batch size,</li>
+<li>C - number of channels</li>
+<li>H - image height</li>
+<li>W - image width</li>
+</ul>
+<h2 id="outputs">Outputs</h2>
+<ol style="list-style-type: decimal">
+<li>The net outputs a blob with the shape [B, H=1024, W=2048]. It can be treated as a one-channel feature map, where each pixel is a label of one of the classes.</li>
+</ol>
+<h2 id="legal-information">Legal Information</h2>
+<p>[*] Other names and brands may be claimed as the property of others.</p>
+</div>
+</body>
+</html>

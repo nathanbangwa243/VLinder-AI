@@ -1,0 +1,17 @@
+#!/bin/sh
+RPM_INSTALL_PREFIX=/opt/intel
+if [ x"$RPM_INSTALL_PREFIX" = x"" ]; then
+    export RPM_INSTALL_PREFIX="/opt/intel"
+fi
+
+LINK_NAME="${RPM_INSTALL_PREFIX}/openvino"
+rm -f "${LINK_NAME}"
+
+# After uninstallation, the link should point to the latest installed version
+cd "${RPM_INSTALL_PREFIX}"
+TARGET=`find openvino* -maxdepth 0 -type d ! -empty ! -name openvino_2019.3.376 -print 2>/dev/null | sort | tail -1`
+if [ -n "${TARGET}" ]; then
+    ln -sfT "${TARGET}" "${LINK_NAME}"
+fi
+cd - > /dev/null
+exit 0

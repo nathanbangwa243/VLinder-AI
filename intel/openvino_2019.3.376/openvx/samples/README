@@ -1,0 +1,270 @@
+------------------------------------------------------------------------------
+                          OpenVX* Samples Setup
+                                  README
+------------------------------------------------------------------------------
+This README provides general instructions on building and running OpenVX*
+samples for Intel(R) Computer Vision SDK.
+
+CONTENTS:
+1   System requirements
+2   General assumptions and preparation
+3   Build environment setup
+  3.1 Building on Ubuntu* OS
+  3.2 Building on Microsoft Windows* OS
+  3.3 Content of <SAMPLES_BIN_INSTALL>
+4   Running samples
+5   Transferring sample binaries to another machine
+
+
+1 System requirements
+------------------------------------------------------------------------------
+The samples must be built on a machine running Ubuntu* 16.04 (LTS) or Windows* 10.
+Some target platforms may require building on different versions of Ubuntu.
+Please refer to the release notes for Intel(R) Computer Vision SDK for detailed
+description of build and target systems.
+
+Please note, that not all samples can be build and run on Windows system due to
+limited availability of specific SDK components and their third party dependencies
+on Windows operating system.
+
+Software requirements:
+  - CMake* 2.8.12 or higher
+  - GCC* 4.8.4 or higher (Ubuntu) / Microsoft Visual Studio* 2015 (Windows)
+  - GStreamer* 1.0 (Ubuntu only)
+
+System prerequisites:
+The samples depend on OpenCV, which in turn depends on several external libraries.
+If Ubuntu is used as a build system, please, run the following command to
+install necessary external dependencies:
+
+    $ sudo apt-get install libgtk2.0-bin libgstreamer1.0-0 ffmpeg
+
+Please refer to the description of OpenCV for details.
+
+
+2 General assumptions and preparation
+------------------------------------------------------------------------------
+This readme will refer to the root directory of installed sample package as
+<SAMPLES_ROOT>. This is a directory where this README is placed. The directory
+contains samples source code.
+
+You should select a directory to store results of the samples build, including sample
+executables ready to be run. This directory will be filled by `make install' command.
+This directory will be referred to as <SAMPLES_BIN_INSTALL> in the description below.
+It is recommended that you choose a directory you have write access to. So normally
+it shouldn't be a sub-directory of CV SDK install directory.
+
+Also during the build, cmake requires to be run from a directory where build process
+will be executed. You should create such directory where you like with write permissions
+for your user. In the next section, this directory is referenced as `build' directory.
+
+
+3 Build environment setup
+------------------------------------------------------------------------------
+OpenVX* samples build process relies on CMake*. All samples are built as a part
+of one CMake project, and must be built all at once. Follow the steps below to
+perform the build.
+
+
+3.1 Building on Ubuntu* OS
+
+Setup the environment using the setupvars.sh script provided with Intel CV SDK:
+
+    $ . <SDK_ROOT>/bin/setupvars.sh
+
+Notice the dot (.) at the beginning of the line. <SDK_ROOT> is root directory
+where Intel CV SDK is installed.
+
+Create a temporary build directory, and run cmake from it, providing the
+<SAMPLES_BIN_INSTALL>:
+
+    $ mkdir build && cd build
+    $ cmake -D CMAKE_INSTALL_PREFIX=<SAMPLES_BIN_INSTALL> <SAMPLES_ROOT>
+
+If you omit the CMAKE_INSTALL_PREFIX option, the samples will be installed to
+/usr/local. In this case, you will need to install them as root.
+
+Build the sample executables:
+
+    $ make
+
+Install sample binaries and accompanying files:
+
+    $ make install
+
+You may need to run this command as root, if you do not have write access to
+<SAMPLES_BIN_INSTALL>.
+
+
+3.2 Building on Windows* OS
+
+Microsoft Visual Studio* 2015 is recommended for build. The following examples
+use it for illustrative purposes.
+
+Create a temporary build directory, and run cmake from it, providing the
+<SAMPLES_BIN_INSTALL>:
+
+    mkdir build
+    cd build
+    cmake -G "Visual Studio 14 2015 Win64" -D CMAKE_INSTALL_PREFIX=<SAMPLES_BIN_INSTALL> <SAMPLES_ROOT>
+
+Open generated solution file in Visual Studio and build it. Make sure that INSTALL project is built,
+in this case <SAMPLES_BIN_INSTALL> will be populated. The content of this directory is described
+in the next section of this document.
+
+
+3.3 Content of <SAMPLES_BIN_INSTALL>
+
+After the build/installation, you should have the following structure in
+your <SAMPLES_BIN_INSTALL> directory:
+
+    <SAMPLES_BIN_INSTALL>
+     |-- bin
+         |-- auto_contrast
+         |   |-- auto_contrast          (executable)
+         |   `-- low_contrast_vga.jpg   (default input for auto_contrast)
+         |-- hetero_basic
+         |   |-- hetero_basic           (executable)
+         |   `-- toy_flower_512x512.mp4 (default input for hetero_basic)
+         |-- lane_detection
+         |   |-- lane_detection         (executable)
+         |   `-- road_lane.mp4          (default input for lane_detection)
+         |-- video_stabilization
+         |   |-- video_stabilization    (executable)
+         |   `-- toy_flower.mp4         (default input for video_stabilization)
+         |-- kernel_enumerator
+         |   `-- kernel_enumerator      (executable)
+         |-- census_transform
+         |   |-- census_transform       (executable)
+         |   `-- toy_flower.mp4         (default input for census_transform)
+         |-- motion_detection           *** Available only on Ubuntu
+         |   |-- motion_detection       (executable)
+         |   `-- VID_640x360.mp4        (default input for motion_detection)
+         |-- gstovx_plugin              *** Available only on Ubuntu
+         |   `-- libgstovxplugin.so     (plugin library)
+         |-- ocl_custom_kernel
+         |   |-- ocl_custom_kernel      (executable)
+         |   |-- source.cl              (OpenCL program)
+         |   `-- toy_flower.mp4         (default input for ocl_custom_kernel)
+         `-- color_copy_pipeline
+             |-- color_copy_pipeline    (executable)
+             |-- libcolor_copy_pipeline_lib.so (library with user kernels)
+             |-- low_contrast_5120x6592_I444.raw (input image file)
+             `-- vxsymm7x7_opencl_impl.cl (OpenCL program with custom kernels)
+
+
+4 Running samples
+------------------------------------------------------------------------------
+
+The following steps describe how to run samples on Ubuntu*. Do similar
+steps for Windows*. Please refer to the Intel(R) CV SDK Quick Start Guide for more details
+on setting correct environment.
+
+Setup the environment using the setupvars.sh script provided with the SDK on Ubuntu,
+if you have not done it already during build environment setup:
+
+    $ . <SDK_ROOT>/bin/setupvars.sh
+
+The script will add paths to OpenVX* runtime libraries to LD_LIBRARY_PATH
+environment variable.
+
+Go to the sample's directory inside the install directory:
+
+    $ cd <SAMPLES_BIN_INSTALL>/bin/<sample name>
+
+Use the --help option to view command line parameters for your sample:
+
+    $ ./<sample name> --help
+
+Refer to the sample's README for a full description on running the sample.
+
+
+5 Transferring sample binaries to another machine
+------------------------------------------------------------------------------
+In order to run the sample executables on another machine, you must make sure
+that the following components are available on your target platform:
+  - OpenVX* runtime libraries
+  - OpenCV third-party libraries, if the sample is built with OpenCV support
+  - Sample binaries and accompanying files (install directory content)
+
+OpenVX runtime libraries are located in the following directory:
+  - <SDK_ROOT>/openvx/lib/
+
+OpenCV third-party libraries are located in the following directory:
+  - <SDK_ROOT>/opencv/share/OpenCV/3rdparty/lib/
+
+You should copy these libraries to the target machine, and add their
+location(s) to LD_LIBRARY_PATH before launching the samples.
+
+You can copy the whole <install directory> to the target machine, to be able
+to run any of the samples, or copy just the subdirectory related to the sample
+you wish to run.
+
+Please refer to the Installation Guide (PDF) for details on how to set up the
+target platform.
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+THESE MATERIALS ARE PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL INTEL OR ITS
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THESE
+MATERIALS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+INFORMATION IN THIS DOCUMENT IS PROVIDED IN CONNECTION WITH INTEL
+PRODUCTS. NO LICENSE, EXPRESS OR IMPLIED, BY ESTOPPEL OR OTHERWISE,
+TO ANY INTELLECTUAL PROPERTY RIGHTS IS GRANTED BY THIS DOCUMENT.
+EXCEPT AS PROVIDED IN INTEL'S TERMS AND CONDITIONS OF SALE FOR SUCH
+PRODUCTS, INTEL ASSUMES NO LIABILITY WHATSOEVER AND INTEL DISCLAIMS
+ANY EXPRESS OR IMPLIED WARRANTY, RELATING TO SALE AND/OR USE OF INTEL
+PRODUCTS INCLUDING LIABILITY OR WARRANTIES RELATING TO FITNESS FOR
+A PARTICULAR PURPOSE, MERCHANTABILITY, OR INFRINGEMENT OF ANY PATENT,
+COPYRIGHT OR OTHER INTELLECTUAL PROPERTY RIGHT.
+
+A "Mission Critical Application" is any application in which failure
+of the Intel Product could result, directly or indirectly, in personal
+injury or death. SHOULD YOU PURCHASE OR USE INTEL'S PRODUCTS FOR ANY
+SUCH MISSION CRITICAL APPLICATION, YOU SHALL INDEMNIFY AND HOLD INTEL
+AND ITS SUBSIDIARIES, SUBCONTRACTORS AND AFFILIATES, AND THE DIRECTORS,
+OFFICERS, AND EMPLOYEES OF EACH, HARMLESS AGAINST ALL CLAIMS COSTS,
+DAMAGES, AND EXPENSES AND REASONABLE ATTORNEYS' FEES ARISING OUT OF,
+DIRECTLY OR INDIRECTLY, ANY CLAIM OF PRODUCT LIABILITY, PERSONAL INJURY,
+OR DEATH ARISING IN ANY WAY OUT OF SUCH MISSION CRITICAL APPLICATION,
+WHETHER OR NOT INTEL OR ITS SUBCONTRACTOR WAS NEGLIGENT IN THE DESIGN,
+MANUFACTURE, OR WARNING OF THE INTEL PRODUCT OR ANY OF ITS PARTS.
+
+Intel may make changes to specifications and product descriptions at
+any time, without notice. Designers must not rely on the absence or
+characteristics of any features or instructions marked "reserved" or
+"undefined". Intel reserves these for future definition and shall have
+no responsibility whatsoever for conflicts or incompatibilities arising
+from future changes to them. The information here is subject to change
+without notice. Do not finalize a design with this information.
+
+The products described in this document may contain design defects or
+errors known as errata which may cause the product to deviate from
+published specifications. Current characterized errata are available
+on request.
+
+Contact your local Intel sales office or your distributor to obtain the
+latest specifications and before placing your product order.
+
+Copies of documents which have an order number and are referenced in
+this document, or other Intel literature, may be obtained
+by calling 1-800-548-4725, or go to:
+http://www.intel.com/design/literature.htm
+
+Intel Corporation is the author of the Materials, and requests that all
+problem reports or change requests be submitted to it directly.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.

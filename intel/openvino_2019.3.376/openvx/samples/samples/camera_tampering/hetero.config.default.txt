@@ -1,0 +1,17 @@
+vxBackgroundSubMOG2Node             intel.cpu
+vxDilate3x3Node(1)                  intel.cpu
+vxErode3x3Node                      intel.cpu
+vxDilate3x3Node(2)                  intel.cpu
+vxChannelExtractNode(0)             intel.cpu
+vxChannelExtractNode(1)             intel.cpu
+vxChannelExtractNode(2)             intel.cpu
+vxChannelExtractNode(3)             intel.cpu
+vxScaleImageNode(0)                 intel.cpu
+vxScaleImageNode(1)                 intel.cpu
+vxScaleImageNode(2)                 intel.cpu
+vxChannelCombineNode                intel.cpu
+vxColorConvertNode                  intel.cpu
+CT_vxColorConvertNode               intel.cpu
+CT_vxChannelExtractNode             intel.cpu
+CT_vxScaleImageNode                 intel.cpu
+CT_vxCannyEdgeDetectorNode          intel.cpu

@@ -1,0 +1,45 @@
+"""
+ OpenVINO Profiler
+ Class for storing int8 calibration cli params
+
+ Copyright (c) 2018 Intel Corporation
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+"""
+import json
+import os
+import sys
+
+from app.main.jobs.tools_runner.console_parameters import ConsoleToolParameters
+from app.main.jobs.topology_convert.topology_convert_config import TopologyConvertConfig
+from config.constants import MODEL_DOWNLOADER_PATH, MODEL_OPTIMIZER_PATH
+
+
+class TopologyConvertParameters(ConsoleToolParameters):
+    def __init__(self, config: TopologyConvertConfig, path=MODEL_DOWNLOADER_PATH):
+        super(TopologyConvertParameters, self).__init__()
+        self.path = sys.executable
+        self.exe = os.path.join(path, 'converter.py')
+        self.model_optimizer = os.path.join(MODEL_OPTIMIZER_PATH, 'mo.py')
+        self.set_parameter('download_dir', os.path.join(config.dir))
+        self.set_parameter('name', config.name)
+        self.set_parameter('mo', self.model_optimizer)
+        args = json.loads(config.args)
+        for arg, val in args.items():
+            self.set_parameter(arg, val)
+
+    def __str__(self, parameter_prefix='--'):
+        exe_path = '{} {}'.format(self.path, self.exe)
+        params = ' '.join(
+            ['{p}{k} {v}'.format(p=parameter_prefix, k=key, v=value) for key, value in self.params.items()])
+        return exe_path + ' ' + params

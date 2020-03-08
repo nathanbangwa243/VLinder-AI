@@ -1,0 +1,16 @@
+{
+  "name": "dl-workbench-proxy-server",
+  "version": "0.0.1",
+  "description": "A proxy server for the OpenVINO Workbench.",
+  "main": "proxy-server.js",
+  "scripts": {
+    "start": "node proxy-server.js"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.16.4",
+    "helmet": "3.21.1",
+    "http-proxy": "1.17.0",
+    "mime": "2.4.1"
+  }
+}

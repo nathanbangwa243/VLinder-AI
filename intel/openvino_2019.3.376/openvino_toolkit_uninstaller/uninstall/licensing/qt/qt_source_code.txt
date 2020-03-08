@@ -1,0 +1,5 @@
+You can get Qt source code here: 
+
+http://registrationcenter-download.intel.com/akdlm/irc_nas/13488/qt-src-5.12.0-windows.zip
+http://registrationcenter-download.intel.com/akdlm/irc_nas/13488/qt-src-5.12.0-linux.tgz
+http://registrationcenter-download.intel.com/akdlm/irc_nas/13488/qt-src-5.12.0-macosx.zip

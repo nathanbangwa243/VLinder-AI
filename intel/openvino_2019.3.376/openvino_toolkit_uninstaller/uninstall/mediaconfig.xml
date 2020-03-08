@@ -1,0 +1,1463 @@
+<MediaConfig>
+    <Name>${SUITE_NAME}</Name>
+    <Description>${suite_desc}</Description>
+    <GUID>1571685660188</GUID>
+    <Env/>
+    <Product platform="INTEL64" id="1">
+        <Name>OpenVINO Core</Name>
+        <Description/>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="1" id="1" depend="" mandatory="1" core="1">
+            <Name>OPENVINO_BASE</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-base</RPMProductFamily>
+            <RPMProductCode>intel-openvino-base-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-base-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-base__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="2" depend="" mandatory="1" core="0">
+            <Name>DLDT_BASE</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-dldt-base</RPMProductFamily>
+            <RPMProductCode>intel-openvino-dldt-base-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-dldt-base-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-dldt-base__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="3" depend="" mandatory="1" core="0">
+            <Name>OPENVINO_FPGA</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-base</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-base-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-base-2019.0.555-2019.0-555.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-base__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="4" depend="" mandatory="1" core="0">
+            <Name>Environment variables</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-setupvars</RPMProductFamily>
+            <RPMProductCode>intel-openvino-setupvars-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-setupvars-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-setupvars__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="5" depend="" mandatory="1" core="0">
+            <Name>Environment variables</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-setupvars</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-setupvars-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-setupvars-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-setupvars__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="6" depend="" mandatory="1" core="0">
+            <Name>EULA</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-eula</RPMProductFamily>
+            <RPMProductCode>intel-openvino-eula-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-eula-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-eula__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="2">
+        <Name>Inference Engine</Name>
+        <Description>An execution engine that delivers inference solutions on embedded platforms. Provides an embedded-friendly scoring solution that optimizes execution for target hardware.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="1" depend="2.4;2.7" mandatory="0" core="0">
+            <Name>Inference Engine Development Kit</Name>
+            <Description>Inference Engine header files</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-sdk</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-sdk-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-sdk-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-sdk__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="2" depend="2.5;2.7" mandatory="0" core="0">
+            <Name>Inference Engine Development Kit</Name>
+            <Description>Inference Engine header files</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-sdk-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-sdk-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-sdk-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-sdk-ubuntu-xenial__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="3" depend="2.6;2.7" mandatory="0" core="0">
+            <Name>Inference Engine Development Kit</Name>
+            <Description>Inference Engine header files</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-sdk-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-sdk-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-sdk-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-sdk-ubuntu-bionic__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="4" depend="2.31" mandatory="0" core="0">
+            <Name>Inference Engine Python tools</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-bin-python-tools</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-bin-python-tools-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-bin-python-tools-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-bin-python-tools__x86_64</Abbr>
+            <Data>2</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="5" depend="2.31" mandatory="0" core="0">
+            <Name>Inference Engine Python tools</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-bin-python-tools-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-bin-python-tools-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-bin-python-tools-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-bin-python-tools-ubuntu-xenial__x86_64</Abbr>
+            <Data>2</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="6" depend="2.31" mandatory="0" core="0">
+            <Name>Inference Engine Python tools</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-bin-python-tools-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-bin-python-tools-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-bin-python-tools-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-bin-python-tools-ubuntu-bionic__x86_64</Abbr>
+            <Data>2</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="7" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Samples</Name>
+            <Description>Inference Engine Samples</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-samples</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-samples-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-samples-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-samples__x86_64</Abbr>
+            <Data>3</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="8" depend="" mandatory="1" core="0">
+            <Name>Inference Engine RT</Name>
+            <Description>Inference Engine RT</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt__x86_64</Abbr>
+            <Data>42</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="9" depend="" mandatory="1" core="0">
+            <Name>Inference Engine 3rd bins</Name>
+            <Description>Inference Engine 3rd bins debug</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-bin-3rd-debug</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-bin-3rd-debug-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-bin-3rd-debug-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-bin-3rd-debug__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="10" depend="2.8" mandatory="1" core="0">
+            <Name>Inference Engine RT Core</Name>
+            <Description>Inference Engine RT Core</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-core</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-core-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-core-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-core__x86_64</Abbr>
+            <Data>7</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="11" depend="2.8" mandatory="1" core="0">
+            <Name>Inference Engine RT Core</Name>
+            <Description>Inference Engine RT Core</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-core-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-core-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-core-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-core-ubuntu-xenial__x86_64</Abbr>
+            <Data>6</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="12" depend="2.8" mandatory="1" core="0">
+            <Name>Inference Engine RT Core</Name>
+            <Description>Inference Engine RT Core</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-core-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-core-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-core-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-core-ubuntu-bionic__x86_64</Abbr>
+            <Data>6</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="13" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® CPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® CPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-cpu</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-cpu-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-cpu-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-cpu__x86_64</Abbr>
+            <Data>32</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="14" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® CPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® CPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-cpu-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-cpu-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-cpu-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-cpu-ubuntu-xenial__x86_64</Abbr>
+            <Data>33</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="15" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® CPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® CPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-cpu-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-cpu-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-cpu-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-cpu-ubuntu-bionic__x86_64</Abbr>
+            <Data>33</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="16" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Processor Graphics</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Processor Graphics</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gpu</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gpu-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gpu-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gpu__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="17" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Processor Graphics</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Processor Graphics</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gpu-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gpu-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gpu-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gpu-ubuntu-xenial__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="18" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Processor Graphics</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Processor Graphics</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gpu-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gpu-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gpu-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gpu-ubuntu-bionic__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${PSET_MEDIA_intel-openvino-ie-rt-vpu__x86_64_selected} = 1 OR ${PSET_MEDIA_intel-openvino-ie-rt-vpu-ubuntu-xenial__x86_64_selected} = 1 OR ${PSET_MEDIA_intel-openvino-ie-rt-vpu-ubuntu-bionic__x86_64_selected} = 1 ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="32" depend="" mandatory="1" core="0">
+            <Name>Inference Engine Runtime for Intel® Movidius™ VPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Movidius™ VPU devices including Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-vpu-cl</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-vpu-cl-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-vpu-cl-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-vpu-cl__x86_64</Abbr>
+            <Data>65</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="19" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Movidius™ VPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Movidius™ VPU devices including Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-vpu</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-vpu-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-vpu-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-vpu__x86_64</Abbr>
+            <Data>11</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="20" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Movidius™ VPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Movidius™ VPU devices including Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-vpu-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-vpu-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-vpu-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-vpu-ubuntu-xenial__x86_64</Abbr>
+            <Data>12</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="21" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Movidius™ VPU</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Movidius™ VPU devices including Intel® Movidius™ Neural Compute Stick and Intel® Neural Compute Stick 2</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-vpu-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-vpu-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-vpu-ubuntu-bionic__x86_64</Abbr>
+            <Data>12</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="22" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Gaussian Neural Accelerator</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Gaussian Neural Accelerator</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gna</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gna-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gna-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gna__x86_64</Abbr>
+            <Data>3</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="23" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Gaussian Neural Accelerator</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Gaussian Neural Accelerator</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gna-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gna-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gna-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gna-ubuntu-xenial__x86_64</Abbr>
+            <Data>3</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="24" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Gaussian Neural Accelerator</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Gaussian Neural Accelerator</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-gna-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-gna-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-gna-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-gna-ubuntu-bionic__x86_64</Abbr>
+            <Data>3</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="25" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® FPGA</Name>
+            <Description>Inference Engine pre-build binaries that enables inference on Intel® FPGA devices including Intel® Arria® 10 GX FPGA Development Kit and the Intel® Programmable Acceleration Card with Intel® Arria® 10 GX FPGA</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-dlia</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-dlia-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-dlia-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-dlia__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="26" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® FPGA</Name>
+            <Description>Inference Engine pre-build binaries that enables inference on Intel® FPGA devices including Intel® Arria® 10 GX FPGA Development Kit and the Intel® Programmable Acceleration Card with Intel® Arria® 10 GX FPGA</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-dlia-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-dlia-ubuntu-xenial-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-dlia-ubuntu-xenial-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-dlia-ubuntu-xenial__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="27" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® FPGA</Name>
+            <Description>Inference Engine pre-build binaries that enables inference on Intel® FPGA devices including Intel® Arria® 10 GX FPGA Development Kit and the Intel® Programmable Acceleration Card with Intel® Arria® 10 GX FPGA</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-dlia-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-dlia-ubuntu-bionic-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-dlia-ubuntu-bionic-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-dlia-ubuntu-bionic__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="28" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-hddl</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-hddl-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-hddl-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-hddl__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="29" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-hddl-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-hddl-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-hddl-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-hddl-ubuntu-xenial__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="30" depend="" mandatory="0" core="0">
+            <Name>Inference Engine Runtime for Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Name>
+            <Description>Inference Engine pre-build binaries that enables performing inference tasks on Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-ie-rt-hddl-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-ie-rt-hddl-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-ie-rt-hddl-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-ie-rt-hddl-ubuntu-bionic__x86_64</Abbr>
+            <Data>15</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="31" depend="" mandatory="0" core="0">
+            <Name>Open Model Zoo</Name>
+            <Description>Pre-trained models, model downloader, demos and tools.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-omz-tools</RPMProductFamily>
+            <RPMProductCode>intel-openvino-omz-tools-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-omz-tools-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-omz-tools__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="3">
+        <Name>Model Optimizer</Name>
+        <Description>A command-line tool that imports trained models from popular deep learning frameworks and enhances them for improved execution, storage and transmission.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="0" id="1" depend="" mandatory="0" core="0">
+            <Name>Model Optimizer Tool</Name>
+            <Description>A command-line tool that imports trained models from popular deep learning frameworks and enhances them for improved execution, storage and transmission.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-model-optimizer</RPMProductFamily>
+            <RPMProductCode>intel-openvino-model-optimizer-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-model-optimizer-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-model-optimizer__x86_64</Abbr>
+            <Data>4</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="4">
+        <Name>Deep Learning Workbench</Name>
+        <Description>A web-based graphical environment to profile the performance of deep learning models with sample datasets on various Intel® architecture configurations (CPU, GPU, VPU).</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="0" id="1" depend="2.1;2.2;2.3;3.1;5.2;5.3;5.4;5.5" mandatory="0" core="0">
+            <Name>Deep Learning Workbench</Name>
+            <Description>A web-based graphical environment to profile the performance of deep learning models with sample datasets on various Intel® architecture configurations (CPU, GPU, VPU).</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-dl-workbench</RPMProductFamily>
+            <RPMProductCode>intel-openvino-dl-workbench-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-dl-workbench-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-dl-workbench__x86_64</Abbr>
+            <Data>9</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="5">
+        <Name>OpenCV*</Name>
+        <Description>An Intel-optimized API that is used for processing general computer vision-related flows and for providing analytics and machine learning capabilities on Intel® hardware.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="1" id="1" depend="" mandatory="0" core="0">
+            <Name>OpenCV generic</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-generic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-generic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-generic-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-generic__noarch</Abbr>
+            <Data>5</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component platform="INTEL64" invisible="1" id="2" depend="5.1" mandatory="0" core="0">
+            <Name>OpenCV etc</Name>
+            <Description/>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-etc</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-etc-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-etc-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-etc__noarch</Abbr>
+            <Data>11</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="2" depend="5.1" mandatory="0" core="0">
+            <Name>OpenCV* Libraries</Name>
+            <Description>An Intel-optimized API that is used for processing general computer vision-related flows and for providing analytics and machine learning capabilities on Intel® hardware.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-lib-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-lib-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-lib-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-lib-ubuntu-xenial__x86_64</Abbr>
+            <Data>102</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="3" depend="5.1" mandatory="0" core="0">
+            <Name>OpenCV* Libraries</Name>
+            <Description>An Intel-optimized API that is used for processing general computer vision-related flows and for providing analytics and machine learning capabilities on Intel® hardware.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-lib</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-lib-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-lib-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-lib__x86_64</Abbr>
+            <Data>102</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = jethro ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="4" depend="5.1" mandatory="0" core="0">
+            <Name>OpenCV* Libraries</Name>
+            <Description>An Intel-optimized API that is used for processing general computer vision-related flows and for providing analytics and machine learning capabilities on Intel® hardware.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-lib-yocto-jethro</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-lib-yocto-jethro-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-lib-yocto-jethro-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-lib-yocto-jethro__x86_64</Abbr>
+            <Data>102</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = yocto AND ${DISTRIB_CODENAME} = sumo ) OR ( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="5" depend="5.1" mandatory="0" core="0">
+            <Name>OpenCV* Libraries</Name>
+            <Description>An Intel-optimized API that is used for processing general computer vision-related flows and for providing analytics and machine learning capabilities on Intel® hardware.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-opencv-lib-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-opencv-lib-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-opencv-lib-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-opencv-lib-ubuntu-bionic__x86_64</Abbr>
+            <Data>101</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="6">
+        <Name>OpenVX*</Name>
+        <Description>A new standard API for production deployment of accelerated computer vision apps. It offers a higher level of abstraction, which allows portable, cross-platform performance.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="1" id="1" depend="" mandatory="0" core="0">
+            <Name>OpenVX* Samples</Name>
+            <Description>OpenVX* Samples</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-openvx-samples</RPMProductFamily>
+            <RPMProductCode>intel-openvino-openvx-samples-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-openvx-samples-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-openvx-samples__x86_64</Abbr>
+            <Data>143</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="2" depend="6.1" mandatory="0" core="0">
+            <Name>OpenVX* Runtime</Name>
+            <Description>A new standard API for production deployment of accelerated computer vision apps. It offers a higher level of abstraction, which allows portable, cross-platform performance.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-openvx</RPMProductFamily>
+            <RPMProductCode>intel-openvino-openvx-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-openvx-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-openvx__x86_64</Abbr>
+            <Data>79</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = ubuntu OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="3" depend="6.1" mandatory="0" core="0">
+            <Name>OpenVX* Runtime</Name>
+            <Description>A new standard API for production deployment of accelerated computer vision apps. It offers a higher level of abstraction, which allows portable, cross-platform performance.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-openvx-ubuntu</RPMProductFamily>
+            <RPMProductCode>intel-openvino-openvx-ubuntu-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-openvx-ubuntu-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-openvx-ubuntu__x86_64</Abbr>
+            <Data>79</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="${SYS_NAME} = yocto OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="0" id="4" depend="6.1" mandatory="0" core="0">
+            <Name>OpenVX* Runtime including IPU plugin for Yocto</Name>
+            <Description>A new standard API for production deployment of accelerated computer vision apps. It offers a higher level of abstraction, which allows portable, cross-platform performance.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-openvx-yocto</RPMProductFamily>
+            <RPMProductCode>intel-openvino-openvx-yocto-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-openvx-yocto-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-openvx-yocto__x86_64</Abbr>
+            <Data>80</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="7">
+        <Name>Open Model Zoo</Name>
+        <Description>Pre-trained models, model downloader, demos and tools.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="0" id="1" depend="2.1;2.2;2.3" mandatory="0" core="0">
+            <Name>Open Model Zoo</Name>
+            <Description>Pre-trained models, model downloader, demos and tools.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-omz-dev</RPMProductFamily>
+            <RPMProductCode>intel-openvino-omz-dev-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-omz-dev-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-omz-dev__x86_64</Abbr>
+            <Data>51</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="8">
+        <Name>Intel(R) Media SDK</Name>
+        <Description>Intel(R) Media SDK provides software development tools and libraries needed to develop enterprise grade media solutions on Intel(R) Xeon(R) and Core(TM) processor-based platforms. For OpenVINO(TM) toolkit components, this SDK offers access to hardware accelerated video codecs and frame processing.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <Component condition="${EUID} = 0" platform="INTEL64" invisible="0" id="1" depend="" mandatory="0" core="0">
+            <Name>Intel(R) Media SDK</Name>
+            <Description>Intel(R) Media SDK provides software development tools and libraries needed to develop enterprise grade media solutions on Intel(R) Xeon(R) and Core(TM) processor-based platforms. For OpenVINO(TM) toolkit components, this SDK offers access to hardware accelerated video codecs and frame processing.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-mediasdk</RPMProductFamily>
+            <RPMProductCode>intel-openvino-mediasdk</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-mediasdk-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-mediasdk__x86_64</Abbr>
+            <InstallDir>/</InstallDir>
+            <Data>133</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="9">
+        <Name>Documentation</Name>
+        <Description/>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component platform="INTEL64" invisible="1" id="1" depend="" mandatory="1" core="0">
+            <Name>Documentation</Name>
+            <Description>Product Documentation</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-docs</RPMProductFamily>
+            <RPMProductCode>intel-openvino-docs-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>noarch</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-docs-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-docs__noarch</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="10">
+        <Name>GFX Driver</Name>
+        <Description/>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <InstallDir>${OPENVINO_ROOT}</InstallDir>
+        <Component condition="( ${SYS_NAME} = centos OR ${OS_ABBR} = REDHAT_EL_7 ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="1" depend="" mandatory="1" core="0">
+            <Name>Intel® Graphics for Linux*</Name>
+            <Description>Intel® Graphics for Linux*</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-gfx-driver-centos</RPMProductFamily>
+            <RPMProductCode>intel-openvino-gfx-driver-centos-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-gfx-driver-centos-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-gfx-driver-centos__x86_64</Abbr>
+            <Data>141</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = xenial ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="2" depend="" mandatory="1" core="0">
+            <Name>Intel® Graphics for Linux*</Name>
+            <Description>Intel® Graphics for Linux*</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-gfx-driver-ubuntu-xenial</RPMProductFamily>
+            <RPMProductCode>intel-openvino-gfx-driver-ubuntu-xenial-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-gfx-driver-ubuntu-xenial-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-gfx-driver-ubuntu-xenial__x86_64</Abbr>
+            <Data>26</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+        <Component condition="( ${SYS_NAME} = ubuntu AND ${DISTRIB_CODENAME} = bionic ) OR ${PSET_MODE} = uninstall" platform="INTEL64" invisible="1" id="3" depend="" mandatory="1" core="0">
+            <Name>Intel® Graphics for Linux*</Name>
+            <Description>Intel® Graphics for Linux*</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-gfx-driver-ubuntu-bionic</RPMProductFamily>
+            <RPMProductCode>intel-openvino-gfx-driver-ubuntu-bionic-2019.3.376</RPMProductCode>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-gfx-driver-ubuntu-bionic-2019.3.376-2019.3-376.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-gfx-driver-ubuntu-bionic__x86_64</Abbr>
+            <Data>31</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Shared>${SHARED_SUITE}</Shared>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="11">
+        <Name>Intel(R) FPGA for OpenCL(TM) software technology</Name>
+        <Description>The Intel(R) FPGA RTE for OpenCL(TM) provides utilities, host runtime libraries, drivers, and RTE-specific libraries and files.</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <Component condition="${EUID} = 0" platform="INTEL64" invisible="0" id="1" depend="" mandatory="0" core="0">
+            <Name>Intel(R) FPGA for OpenCL(TM) software technology</Name>
+            <Description>The Intel(R) FPGA RTE for OpenCL(TM) provides utilities, host runtime libraries, drivers, and RTE-specific libraries and files.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-rte</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-rte-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-rte-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-rte__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" id="12">
+        <Name>Pre-compiled FPGA bitstream samples</Name>
+        <Description>Pre-compiled FPGA bitstream samples</Description>
+        <Layers>
+            <phonehome>
+                <HideActivateButton>0</HideActivateButton>
+                <HideOnLicenseTab>0</HideOnLicenseTab>
+            </phonehome>
+        </Layers>
+        <Component platform="INTEL64" invisible="0" id="1" depend="" mandatory="0" core="0">
+            <Name>Intel(R) Programmable Acceleration Card with Intel(R) Arria(R) 10 GX FPGA</Name>
+            <Description>Pre-compiled bitstream samples for Intel(R) Programmable Acceleration Card with Intel® Arria(R) 10 GX FPGA.</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-rc-bs</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-rc-bs-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-rc-bs-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-rc-bs__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+        <Component platform="INTEL64" invisible="0" id="2" depend="" mandatory="0" core="0">
+            <Name>Intel(R) Vision Accelerator Design with Intel(R) FPGA SG1</Name>
+            <Description>Pre-compiled bitstream samples for Intel(R) Vision Accelerator Design with Intel(R) FPGA SG1</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-pl-sg1-bs</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-pl-sg1-bs-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-pl-sg1-bs-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-pl-sg1-bs__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+        <Component platform="INTEL64" invisible="0" id="3" depend="" mandatory="0" core="0">
+            <Name>Intel(R) Vision Accelerator Design with Intel(R) FPGA SG2</Name>
+            <Description>Pre-compiled bitstream samples for Intel(R) Vision Accelerator Design with Intel(R) FPGA SG2</Description>
+            <Selected>1</Selected>
+            <Layers>
+                <phonehome>
+                    <HideActivateButton>0</HideActivateButton>
+                    <HideOnLicenseTab>0</HideOnLicenseTab>
+                </phonehome>
+            </Layers>
+            <RPMProductFamily>intel-openvino-fpga-pl-sg2-bs</RPMProductFamily>
+            <RPMProductCode>intel-openvino-fpga-pl-sg2-bs-2019.0.555</RPMProductCode>
+            <Version>2019.0</Version>
+            <RPMProductRelease>555</RPMProductRelease>
+            <RPMProductArch>x86_64</RPMProductArch>
+            <NONRPMProductCode>intel-openvino-fpga-pl-sg2-bs-2019.0.555-2019.0-555.x86_64.rpm</NONRPMProductCode>
+            <Abbr>intel-openvino-fpga-pl-sg2-bs__x86_64</Abbr>
+            <Data>1</Data>
+            <Type>rpm</Type>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+        </Component>
+    </Product>
+    <Product platform="INTEL64" invisible="1" id="13" mandatory="1">
+        <Name>Uninstaller</Name>
+        <Description>Uninstaller</Description>
+        <Component platform="INTEL64" invisible="1" id="1" mandatory="1">
+            <Name>Uninstaller</Name>
+            <Description>Uninstaller</Description>
+            <RPMFileDir>${PACKAGE_DIR}/rpm</RPMFileDir>
+            <Version>2019.3</Version>
+            <RPMProductRelease>376</RPMProductRelease>
+            <Selected>1</Selected>
+            <NONRPMProductCode>intel-openvino-base-pset-2019.3.376-2019.3-376.noarch.rpm</NONRPMProductCode>
+            <Type>rpm</Type>
+            <RPMProductCode>intel-openvino-base-pset-2019.3.376</RPMProductCode>
+            <Abbr>intel-openvino-base-pset</Abbr>
+            <Data>51</Data>
+        </Component>
+    </Product>
+</MediaConfig>

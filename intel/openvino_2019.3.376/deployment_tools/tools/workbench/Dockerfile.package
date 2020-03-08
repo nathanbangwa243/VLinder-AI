@@ -1,0 +1,193 @@
+FROM debian:10 as OPENVINO_BUILD
+
+ENV INSTALLDIR /opt/intel/openvino
+ENV TEMP_DIR /tmp/openvino_installer
+
+ENV BUILD_DEPENDENCIES "\
+    build-essential \
+    cmake \
+    sudo \
+    "
+ENV INSTALATION_DEPENDENCIES "\
+    cpio \
+    libpng-dev \
+    rpm2cpio \
+    curl \
+    unzip \
+    lsb-release \
+    ca-certificates \
+    autoconf \
+    automake \
+    libtool \
+    "
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ${BUILD_DEPENDENCIES} ${INSTALATION_DEPENDENCIES} && \
+    rm -rf /var/lib/apt/lists/*
+
+# For VPU
+RUN cd /opt/ && \
+    curl -L https://github.com/libusb/libusb/archive/v1.0.22.zip --output v1.0.22.zip && \
+    unzip v1.0.22.zip && cd libusb-1.0.22 && \
+    ./bootstrap.sh && \
+    ./configure --disable-udev --enable-shared && \
+    make -j4
+
+RUN mkdir -p $TEMP_DIR/l_openvino_toolkit
+WORKDIR $TEMP_DIR
+
+COPY l_openvino_toolkit*.tgz l_openvino_toolkit.tgz
+
+RUN tar xf l_openvino_toolkit.tgz -C l_openvino_toolkit
+
+# install OpenVINO package for Ubuntu from unzip RPMs
+COPY install_RPMS.sh install_RPMS.sh
+RUN ./install_RPMS.sh $TEMP_DIR/l_openvino_toolkit/l_openvino_toolkit*
+# set INSTALLDIR in the setupvars.sh
+RUN sed -i 's/<INSTALLDIR>/\/opt\/intel\/openvino/g' /opt/intel/openvino/bin/setupvars.sh
+# Build Inference Engine samples
+RUN mkdir $INSTALLDIR/deployment_tools/inference_engine/samples/build && \
+    cd $INSTALLDIR/deployment_tools/inference_engine/samples/build && \
+    /bin/bash -c "source $INSTALLDIR/bin/setupvars.sh && cmake .. && make -j8 benchmark_app"
+
+########################################################################################################################
+
+FROM debian:10
+
+ARG db_password
+ARG rabbitmq_password
+ARG DOWNLOAD_LINK
+
+ENV DB_PASSWORD $db_password
+ENV RABBITMQ_PASSWORD $rabbitmq_password
+
+ENV INSTALLDIR /opt/intel/openvino
+ENV OPENVINO_WORKBENCH_ROOT ${INSTALLDIR}/deployment_tools/tools/workbench
+ENV OPENVINO_WORKBENCH_DATA_PATH ${OPENVINO_WORKBENCH_ROOT}/app/data
+ENV PYTHONPATH ${OPENVINO_WORKBENCH_ROOT}:${OPENVINO_WORKBENCH_ROOT}/app/main/console_tool_wrapper/winograd_tool/winograd_cli_tool
+ENV NVM_DIR /home/openvino/.nvm
+
+
+ENV PYTHON_VERSION 3.7
+ENV PYTHON python${PYTHON_VERSION}
+
+RUN useradd -ms /bin/bash openvino && \
+    chown openvino -R /home/openvino
+
+ENV OPENVINO_DEPENDENCIES "\
+    libcairo2-dev \
+    libpango1.0-dev \
+    libglib2.0-dev \
+    libgtk-3-0 \
+    libswscale-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libgstreamer1.0-0 \
+    gstreamer1.0-plugins-base \
+    libusb-1.0-0-dev \
+    libdrm-dev\
+    ocl-icd-libopencl1 \
+    dpkg-dev \
+    lsb-release \
+    libtinfo5 \
+    "
+
+ENV WORKBENCH_DEPENDENCIES "\
+    curl \
+    python3 \
+    python3-pip \
+    python3-setuptools \
+    python3-dev \
+    postgresql \
+    postgresql-contrib \
+    apt-transport-https \
+    rabbitmq-server \
+    sudo \
+    unzip \
+    "
+WORKDIR /thirdparty
+RUN sed -i '3ideb-src http://deb.debian.org/debian buster main' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends ${OPENVINO_DEPENDENCIES} ${WORKBENCH_DEPENDENCIES} && \
+    apt-get source ${OPENVINO_DEPENDENCIES} ${WORKBENCH_DEPENDENCIES} && \
+    rm -rf /var/lib/apt/lists/*
+
+# GET BINARIES FROM OPENVINO BUILD
+COPY --from=OPENVINO_BUILD /opt /opt
+
+# FOR GPU
+RUN mkdir /opt/gfx && \
+    cp $INSTALLDIR/install_dependencies/*.deb /opt/gfx/ && \
+    cd /opt/gfx && \
+    dpkg -i *.deb && \
+    ldconfig && \
+    rm -rf /opt/gfx
+
+# MAKE INSTALL FOR LIBUSB
+WORKDIR /opt/libusb-1.0.22/libusb
+
+RUN /bin/mkdir -p '/usr/local/lib' && \
+    /bin/bash ../libtool   --mode=install /usr/bin/install -c   libusb-1.0.la '/usr/local/lib' && \
+    /bin/mkdir -p '/usr/local/include/libusb-1.0' && \
+    /usr/bin/install -c -m 644 libusb.h '/usr/local/include/libusb-1.0' && \
+    /bin/mkdir -p '/usr/local/lib/pkgconfig' && \
+    cd  /opt/libusb-1.0.22/ && \
+    /usr/bin/install -c -m 644 libusb-1.0.pc '/usr/local/lib/pkgconfig' && \
+    ldconfig
+
+# Add a user to groups "video" and "users" to use GPU and VPU
+RUN gpasswd -a openvino video && gpasswd -a openvino users
+
+
+
+# SET UP DEPENDENCIES FOR SERVER
+RUN mkdir -m 777 -p ${OPENVINO_WORKBENCH_DATA_PATH} && \
+    chown -R openvino ${OPENVINO_WORKBENCH_ROOT}
+
+WORKDIR ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/accuracy_checker
+
+RUN ${PYTHON} -m pip install --no-cache-dir -r ${OPENVINO_WORKBENCH_ROOT}/requirements.txt && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${OPENVINO_WORKBENCH_ROOT}/model_analyzer/requirements.txt && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${INSTALLDIR}/python/python${PYTHON_VERSION}/requirements.txt && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${INSTALLDIR}/python/python${PYTHON_VERSION}/openvino/tools/calibration/requirements.txt && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${INSTALLDIR}/deployment_tools/model_optimizer/requirements.txt && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/downloader/requirements.in && \
+    ${PYTHON} -m pip install --no-cache-dir -r ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/downloader/requirements-pytorch.in && \
+    ${PYTHON} setup.py egg_info && ${PYTHON} -m pip install -r accuracy_checker.egg-info/requires.txt && ${PYTHON} setup.py install
+
+WORKDIR /thirdparty
+
+RUN ${PYTHON} -m pip download -r ${OPENVINO_WORKBENCH_ROOT}/requirements.txt && \
+    ${PYTHON} -m pip download -r ${OPENVINO_WORKBENCH_ROOT}/model_analyzer/requirements.txt && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/python/python${PYTHON_VERSION}/requirements.txt && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/python/python${PYTHON_VERSION}/openvino/tools/calibration/requirements.txt && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/deployment_tools/model_optimizer/requirements.txt && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/downloader/requirements.in && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/downloader/requirements-pytorch.in && \
+    ${PYTHON} -m pip download -r ${INSTALLDIR}/deployment_tools/open_model_zoo/tools/accuracy_checker/accuracy_checker.egg-info/requires.txt
+
+# SET UP NVM and DEPENDENCIES FOR PROXY
+RUN echo "openvino ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN mkdir -p $NVM_DIR && \
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+WORKDIR ${OPENVINO_WORKBENCH_ROOT}/proxy
+
+RUN . "$NVM_DIR/nvm.sh" && nvm install v10 && nvm use v10 && npm install
+
+# SET UP POSTGRESQL
+USER postgres
+
+RUN service postgresql start && \
+    psql --command "CREATE USER openvino WITH SUPERUSER PASSWORD '${DB_PASSWORD}';" && \
+    createdb -O openvino workbench
+
+# SET UP ENVIRONMENT FOR START WORKBENCH
+USER openvino
+
+WORKDIR ${OPENVINO_WORKBENCH_ROOT}
+
+# TEMPORARY MEASURE UNTIL THE NEW requirements.txt IS IN PACKAGE
+RUN ${PYTHON} -m pip install celery==4.3
+
+ENTRYPOINT ["bash", "/opt/intel/openvino/deployment_tools/tools/workbench/entrypoint.package.sh"]

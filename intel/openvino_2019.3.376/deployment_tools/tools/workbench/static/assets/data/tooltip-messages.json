@@ -1,0 +1,89 @@
+{
+  "uploadFilePage": {
+    "autoGenerateTooltip": "A dataset consisting of randomly generated noise in images for testing purposes",
+    "modelDownloaderTooltip": "An open-source repository of pretrained models (requires internet connectivity)",
+    "modelTask": "Select whether the model is for an object-detection or classification task.  Use generic for all other tasks.",
+    "modelMethod": "Select the object-detection inference method."
+  },
+  "dashboard": {
+    "modelCardPage": {
+      "int8Tooltip": "Refers to 8-bit integer precision that results in greater performance.",
+      "winogradTooltip": "Results in greater performance when applied to CPUs with AVX-512."
+    }
+  },
+  "modelAnalysis": {
+    "batch": "Specifies the number of dataset images that will be propagated to the neural network at a time.",
+    "g_flops": "Specifies an estimation of floating-point operations required to infer a model.",
+    "g_iops": "Specidfies an estimation of integer operations required to infer a model.",
+    "m_params": "Specifies an estimation of total weights in a model.",
+    "minimum_memory": "Specifies the minimum memory utilized based on the precision of model weights.",
+    "maximum_memory": "Specifies the maximum memory utilized based on the precision of model weights.",
+    "sparsity": "Specifies the percent of zero weights in the model."
+  },
+  "accuracyParams": {
+    "resize.size": "Resizes images to fit input dimensions of the model.",
+    "bgr_to_rgb": "Sets the color space of the original model.",
+    "hasBackground": "Specifies whether the selected model was trained on a dataset with an additional background class.",
+    "normalization.mean": "Specifies the values that will be subtracted from the corresponding image channels.",
+    "normalization.std": "Specifies the values for dividing image channels.",
+    "metric": "Specifies the system of measrement to evaluate perfomance of the model.",
+    "accuracy.top_k": "Specifies the number of initial predictions to estimate accuracy on.",
+    "resize_prediction_boxes": "Choose to resize images in postprocessing or set NMS (Non-Maximum Suppression) to make sure detected objects are identified only once.",
+    "nms.overlap": "Specifies Non-Maximum Supression overlap threshold for merging detections.",
+    "map.integral": "Specifies integral type for average precision calculation.",
+    "map.overlap_threshold": "Specifies minimal value for IOU (intersection over union) that allows to make decision that the bounding box of precision is true positive.",
+    "headerLabel": "Advanced Configuration",
+    "headerTooltip": "Advanced parameters for preprocessing and postprocessing models. Modifying these will have an impact on estimated accuracy calculation."
+  },
+  "accuracyDetails": {
+    "usage": "Usage tooltip",
+    "method": "Method tooltip",
+    "preprocessing": "Preprocessing tooltip",
+    "postprocessing": "Postprocessing tooltip",
+    "metric": "Metric tooltip"
+  },
+  "convertionDetails": {
+    "dataType": "Precision of the output model ",
+    "originalChannelsOrder": "Depends on a specific model used. ",
+    "advanced": "Modify these parameters if the default configuration fails."
+  },
+  "inferenceForm": {
+    "parallelStreams": "If number of streams is greater than 1, inferences will take advantage of multi-core processes to run in parallel and asynchronously",
+    "parallelInfers": "Specifies the number of inferences that can execute in parallel.  Multiple infers use multi-threaded, multi-core target processing units.",
+    "batch": "Specifies the number of dataset images that will be propagated to the neural network at a time.",
+    "minBatch": "Specifies the minimum number of images to process at a time during profiling.",
+    "maxBatch": "Specifies the maximum number of images to process at a time during profiling.",
+    "stepBatch": "Specifies the increment of dataset images to batch during profiling.",
+    "minStreams": "Specifies the number of parallel inference streams to begin profiling with.",
+    "maxStreams": "Specifies the number of parallel inference streams to finish profiling with.",
+    "stepStreams": "Specifies the increment of parallel inference streams to test with next.",
+    "minInfers": "Specifies the number of parallel inference requests to begin profiling with.",
+    "maxInfers": "Specifies the number of parallel inference requests to finish profiling with.",
+    "stepInfers": "Specifies the increment of parallel inference requests to test with next.",
+    "inferenceHint": "Estimated throughput and latency results appear in real-time in the plot below as combinations of streams (or inference requests on specific platforms) and batch are used for benchmarking. Inference is executed asynchronously except the case when streams equal one. Use ranges to profile multiple combinations of parameters in sequence."
+  },
+  "optimizationForm": {
+    "maxAccuracyDrop": "Specifies the maximum acceptable percent of accuracy drop during the int-8 quantization procedure. Layers exceeding this threshold will remain in their original precision.",
+    "subset": "Sets the percent of images to calibrate model with.",
+    "int8OptimizationHint": "Int-8 calibration is the optimization technique that allows to further increase performance of your model by decreasing precision. The conversion is lossy from accuracy perspective and you can define maximum acceptable loss you are ready to tolerate. You can select a limited subset of your dataset to do Int-8 calibration.",
+    "winogradOptimizationHints": "Winograd optimization provides performance gain primarily on AVX-512 based platforms. The system auto-detects if the optimization might be applied on the system you use and makes it available only if the system supports this kind of optimization."
+  },
+  "convertModel": {
+    "batch": "Specifies the number of dataset images that will be propagated to the neural network at a time.",
+    "precision": "Specifies the types of variables used to store model weights. Consider using FP16 (16-bit floating point numbers) at this stage as it is supported by all OpenVINO plugins while keeping good accuracy and speed gains over FP32 (32-bit floating point values).",
+    "colorSpace": "Specifies the order of color channels in images that were used during model training. RGB (stands for Red-Green-Blue) is more common, but some libraries like OpenCV use BGR.",
+    "input": "Specifies the name of a layer to be marked as an input layer.",
+    "output": "Specifies the name of a layer to be marked as an output layer. To convert some models, you need to select a layer different from its last layer(s). Output(s) should be specified only for advanced scenarios when you are sure that you need output layers different from default ones.",
+    "scales": "Specifies the values for dividing image channels.",
+    "means": "Specifies the values that will be subtracted from the corresponding image channels.",
+    "legacyMxnet": "Specifies whether your model was trained with MxNet version lower than 1.0.0.",
+    "isFrozen": "Specifies whether your model is \"frozen\". TensorFlow \"frozen\" model is one of the export formats. If you use TensorFlow Object Detection API, your model is likely to be \"frozen\" if there is a single .pb file or if there are one .pb and one config.json files.",
+    "pipelineConfig": "Specifies a file with information about a model built with Tensorflow Object Detection API. Model Optimizer requires this file to get the model hyperparameters to produce IR.",
+    "checkpointFile": "Specifies a file that contains weights of unfrozen TensorFlow model. This file does not contain the graph of your model and it should be selected separately.",
+    "metaFile": "Specifies a file that contains graph definition and additional meta-inforamation about an unfrozen TensorFlow model.",
+    "indexFile": "Specifies a file that indicates which weights are stored in a which shard in a checkpoint of an unfrozed TensorFlow model.",
+    "dataFile": "Specifies a file that represent a single shard that contain weights of an unfrozed TensorFlow model.",
+    "customTFConfig": "Specifies a file that represents a set of predefined settings from Model Optimizer that correspond to a particular topology and version of the framework.",
+    "enableSsdGluoncv": "Specifies whether your model was trained using MxNet GluonCV API."
+  }
+}

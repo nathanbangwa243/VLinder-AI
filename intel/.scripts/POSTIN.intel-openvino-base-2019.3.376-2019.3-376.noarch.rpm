@@ -1,0 +1,14 @@
+#!/bin/sh
+RPM_INSTALL_PREFIX=/opt/intel
+if [ x"$RPM_INSTALL_PREFIX" = x"" ]; then
+    export RPM_INSTALL_PREFIX="/opt/intel"
+fi
+
+LINK_NAME="${RPM_INSTALL_PREFIX}/openvino"
+TARGET="${RPM_INSTALL_PREFIX}/openvino_2019.3.376"
+if [ -h "${LINK_NAME}" ]; then
+    rm -f "${LINK_NAME}"
+fi;
+ln -sf "${TARGET}" "${LINK_NAME}"
+
+exit 0

@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<link rel="stylesheet" href="../../intel_styles.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+    <div id="bannerblock">
+      <img src="../../intel_logo.png" class="intellogo">
+      <h1 class="title">Overview of OpenVINO&trade; toolkit Pre-trained Models</h1>
+    </div>
+  </div>
+<div id="contentblock">
+<h1 id="instance-segmentation-security-0050">instance-segmentation-security-0050</h1>
+<h2 id="use-case-and-high-level-description">Use case and High-level description</h2>
+<p>This model is an instance segmentation network for 80 classes of objects. It is a Mask R-CNN with ResNet50 backbone, FPN and Bottom-Up Augmentation blocks and light-weight RPN.</p>
+<h2 id="example">Example</h2>
+<div class="figure">
+<img src="./instance-segmentation-security-0050.png" />
+
+</div>
+<h2 id="specification">Specification</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">MS COCO val2017 box AP</td>
+<td align="left">31.27%</td>
+</tr>
+<tr class="even">
+<td align="left">MS COCO val2017 mask AP</td>
+<td align="left">27.83%</td>
+</tr>
+<tr class="odd">
+<td align="left">Max objects to detect</td>
+<td align="left">100</td>
+</tr>
+<tr class="even">
+<td align="left">GFlops</td>
+<td align="left">46.602</td>
+</tr>
+<tr class="odd">
+<td align="left">MParams</td>
+<td align="left">30.448</td>
+</tr>
+<tr class="even">
+<td align="left">Source framework</td>
+<td align="left">PyTorch*</td>
+</tr>
+</tbody>
+</table>
+<p>Average Precision (AP) is defined and measured according to standard <a href="http://cocodataset.org/#detection-eval">MS COCO evaluation procedure</a>.</p>
+<h2 id="performance">Performance</h2>
+<h2 id="inputs">Inputs</h2>
+<ol style="list-style-type: decimal">
+<li>name: <code>im_data</code> , shape: [1x3x480x480] - An input image in the format [1xCxHxW]. The expected channel order is BGR.</li>
+<li>name: <code>im_info</code>, shape: [1x3] - Image information: processed image height, processed image width and processed image scale w.r.t. the original image resolution.</li>
+</ol>
+<h2 id="outputs">Outputs</h2>
+<ol style="list-style-type: decimal">
+<li>name: <code>classes</code>, shape: [100, ] - Contiguous integer class ID for every detected object, '0' for background, i.e. no object.</li>
+<li>name: <code>scores</code>: shape: [100, ] - Detection confidence scores in range [0, 1] for every object.</li>
+<li>name: <code>boxes</code>, shape: [100, 4] - Bounding boxes around every detected objects in (top_left_x, top_left_y, bottom_right_x, bottom_right_y) format.</li>
+<li>name: <code>raw_masks</code>, shape: [100, 81, 28, 28] - Segmentation heatmaps for all classes for every output bounding box.</li>
+</ol>
+<h2 id="legal-information">Legal Information</h2>
+<p>[*] Other names and brands may be claimed as the property of others.</p>
+</div>
+</body>
+</html>

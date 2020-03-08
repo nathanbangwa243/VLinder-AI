@@ -1,0 +1,36 @@
+# Default server configuration
+#
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	client_max_body_size 3000M;
+
+	root /home/mediasdk/Work/profiler_web/static;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name openvino-profiler.com www.openvino-profiler.com;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		# try_files $uri $uri/ =404;
+		try_files $uri $uri/ /index.html;
+		add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+	    expires off;
+	}
+
+	location /api {
+        proxy_pass  http://127.0.0.1:5665;
+        add_header 'Cache-Control' 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0';
+	    expires off;
+    }
+
+     location /socket.io/ {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_pass "http://localhost:5665/socket.io/";
+    }
+}

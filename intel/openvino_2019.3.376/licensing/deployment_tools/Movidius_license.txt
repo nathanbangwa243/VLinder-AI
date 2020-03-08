@@ -1,0 +1,489 @@
+Intel's Movidius(TM) Myriad(TM) Development Kit (MDK) - MvNCAPI-ma<version>.mvcmd
+
+MOVIDIUS SOFTWARE DEVELOPMENT LICENSE AGREEMENT
+
+THIS AGREEMENT is entered into as of the Effective Date (defined below)                             
+
+BETWEEN:
+
+1.	MOVIDIUS LIMITED a company incorporated in Ireland under company number 408970 and having its 
+registered office at O'Connell Bridge House, 1st Floor, D'Olier Street, Dublin 2, Ireland (the "Licensor"); 
+and
+
+2.	[FULL CORPORATE NAME] a company incorporated in [ ] under company number [ ] with registered 
+and/or principal offices at [ ] (the "Licensee").
+
+BACKGROUND 
+
+The Licensor wishes to make available to the Licensee via the Movidius.org website and otherwise certain 
+information, documents, software, products and materials for use by or on behalf of the Licensee for the 
+Permitted Purpose. The Licensor wishes to grant a license to the Licensee to use the Materials subject to and in 
+accordance with the terms of this Agreement. 
+
+IT IS AGREED, in consideration of the mutual covenants and undertakings herein contained, as follows:
+
+1	DEFINITIONS AND INTERPRETATION
+
+1.1	In this Agreement, the following words and phrases shall have the meanings given to them below, 
+save where the context otherwise requires:
+
+"Affiliate"
+in relation to a body corporate, any other entity which directly or indirectly 
+Controls, is Controlled by, or is under direct or indirect common Control with, 
+that body corporate from time to time; 
+"Agreement" 
+this license agreement;
+"Confidential 
+Information"
+the Licensee's Confidential Information and/or the Licensor's Confidential 
+Information;
+"Control"
+means that a person possesses, directly or indirectly, the power to direct or 
+cause the direction of the management and policies of the other person 
+(whether through the ownership of voting shares, by contract or otherwise) 
+and "Controls" and "Controlled" shall be interpreted accordingly;
+"Effective Date"
+"Initial 
+Evaluation Date"
+the date on which this Agreement is signed by both parties;
+the date 60 days after the Effective Date;
+"Intellectual 
+Property Rights" 
+or "IPRs" 
+(a)	copyright, rights related to or affording protection similar to copyright, 
+rights in databases, patents and rights in inventions, semi-conductor 
+topography rights, trade marks, rights in Internet domain names and 
+website addresses and other rights in trade names, designs, Know-
+How, trade secrets and other rights in Confidential Information;
+(b)	applications for registration, and the right to apply for registration, for 
+any of the rights listed at (a) above that are capable of being registered 
+in any country or jurisdiction; and
+(c)	all other rights having equivalent or similar effect in any country or 
+jurisdiction;
+"Know-How" 
+all ideas, concepts, schemes, information, knowledge techniques, 
+methodology and anything else in the nature of know-how relating to the 
+Software;
+"Law"
+any applicable law, statute, bye-law, regulation, order, regulatory policy, 
+guidance or industry code, rule of court or directives or requirements of any 
+relevant regulatory body; 
+"Licensee's 
+Confidential 
+Information" 
+any information, however it is conveyed, that relates to the business, affairs, 
+developments, trade secrets, know-how, personnel, and suppliers of the 
+Licensee, including all IPRs, together with all information derived from any of 
+the above, and any other information clearly designated as being confidential 
+(whether or not it is marked "confidential") or which ought reasonably be 
+considered to be confidential;
+"Licensor's 
+Background 
+IPRs" 
+(a)	IPRs owned by the Licensor before the Effective Date, for example 
+those subsisting in the Licensor's proprietary semiconductor 
+topographies, standard development tools, program components or 
+standard code used in computer programming or in physical or 
+electronic media containing the Licensor's Know-How or generic 
+business methodologies; and/or 
+(b)	IPRs created by the Licensor independently of this Agreement; 
+but excluding IPRs owned by the Licensor subsisting in the Licensor Software;
+"Licensor's 
+Confidential 
+Information"
+any information, however it is conveyed that relates to the business, affairs, 
+developments, trade secrets, know-how, personnel and suppliers of the 
+Licensor, including IPRs, together with all information derived from the 
+above, and any other information clearly designated as being confidential 
+(whether or not it is marked as "confidential") or which ought reasonably to 
+be considered to be confidential;
+"Licensor 
+Silicon"
+means the Licensor's proprietary integrated circuits 
+"Materials"
+means the information, documents, Software, products, documents, tools, 
+utilities and materials made available by the Licensor to the Licensee via the 
+Site and otherwise;
+"Party"
+Means each of Licensor and Licensee
+"Permitted 
+Purpose"
+means the limited purpose(s) specified in paragraph 1 of Schedule 1;
+"Site" 
+means the Movidius.org website;
+"Software" 
+Means the Myrid2 MDK software (whether existing at the Effective Date or 
+created subsequently) which is owned by the Licensor or an Affiliate of the 
+Licensor and which is made available to the Licensee or the Licensee's 
+Subsidiaries under this Agreement;
+"Standard 
+License Terms" 
+such terms as include the non-exclusive, perpetual, irrevocable (subject to 
+clause 7.1), royalty-free rights on the part of the Licensee to:
+(a)	download, use, copy and modify the Materials and all IPRs in the 
+Materials solely for the Permitted Purpose and exclusively in 
+connection with the Licensor Silicon; and
+(b)	grant limited sub-licenses to third parties, including without limitation 
+to end-users, to use the IPRs in the Software solely for the Permitted 
+Purpose and in connection with the use by end users of hardware 
+products of the Licensee containing the Licensor Silicon, or of third 
+party hardware products containing both Licensee's software and the 
+Licensor Silicon, provided always that such sub-licenses shall prohibit 
+the reverse engineering of the Software; 
+"Sublicense 
+Conditions" 
+those conditions that Licensor is required to pass down to Licensee pursuant 
+to agreements between Licensor and certain third parties that have licensed 
+components of the Software to Licensor; and
+"Subsidiary"
+means anybody corporate under the direct or indirect Control of another.
+
+1.2	In this Agreement, unless the context otherwise requires: (a) the singular includes the plural and vice 
+versa; (b) reference to a gender includes the other gender and the neuter; (c) references to any 
+legislation, statutory provision or statutory instrument include a reference to that legislation, 
+statutory provision or statutory instrument as amended, extended or re-enacted from time to time 
+and to any regulations made under it; and (d) any phrase introduced by the words "including", 
+"includes", "in particular", "for example" or similar shall be construed as illustrative and without 
+limitation to the generality of the related general words.
+
+1.3	The headings in this Agreement are for ease of reference only and shall not affect its interpretation.
+
+2	LICENSE GRANT
+
+               The Licensor hereby grants to the Licensee and each of its Subsidiaries (only for so long as they remain 
+a Subsidiary of the Licensee) a license of the Materials and the Software on the Standard License 
+Terms subject to the terms and conditions of this Agreement.  For the avoidance of doubt, sublicenses 
+granted pursuant to section (b) of the Standard License Terms may include the right to grant further 
+sublicenses so long as all such further sublicenses shall be limited to use of the IPRs in the Software 
+for the Permitted Purpose and in connection with the use of hardware products of the Licensee 
+containing the Licensor Silicon, or of third party hardware products containing both Licensee's 
+software and the Licensor Silicon, provided always that such sub-licenses shall prohibit the reverse 
+engineering or duplication of the Software. 
+
+2.2     The license granted to Licensee is subject to the Sublicense Conditions specified in Schedule 2 with  
+respect to certain components of the Software (each a "Component").
+
+2.3          Licensee may obtain access to the Software only through those Licensee personnel ("Authorized 
+Licensee Personnel") who are engaged in the Permitted Purpose and who have registered through 
+the Access Registration Terms & Conditions at https://www.movidius.org/authorisation/terms
+
+3	INTELLECTUAL PROPERTY RIGHTS
+
+3.1	Except as expressly set out in this Agreement the Licensee shall not acquire any title, right, or interest 
+in or to any Intellectual Property Rights of the Licensor or its licensors whether created in connection 
+with this Agreement or otherwise, including (a) the Licensor Software; (b) any third party IPRs; or (c) 
+the Licensor's Background IPRs.  All modifications, improvements and derivatives of the foregoing 
+Intellectual Property Rights created in the course of this Agreement, whether by Licensor or Licensee, 
+shall be owned by Licensor.
+
+3.2	Where the Licensee acquires, by operation of law, title to IPRs that is inconsistent with the allocation 
+of title set out in clause 3.1, it shall assign in writing such Intellectual Property Rights as it has 
+acquired to the Licensor forthwith on the request of the Licensor (whenever made).
+
+4	CONFIDENTIALITY
+
+4.1	Except to the extent set out in this clause or where disclosure is expressly permitted elsewhere in this 
+Agreement, each party shall treat the other party's Confidential Information that is disclosed pursuant 
+to this Agreement as confidential and safeguard it accordingly and not disclose the other party's 
+Confidential Information to any other person without the owner's prior written consent.
+
+4.2	Clause 4.1 shall not apply to the extent that (a) such disclosure is a requirement of Law placed upon 
+the party making the disclosure; (b) such information was in the possession of the party making the 
+disclosure without obligation of confidentiality prior to its disclosure by the information owner; (c) 
+such information was obtained from a third party without obligation of confidentiality; (d) such 
+information was already in the public domain at the time of disclosure otherwise than by a breach of 
+this Agreement; or (e) it is independently developed without access to the other party's Confidential 
+Information.
+
+4.3	Each party may only disclose the Confidential Information of the other party to the personnel of the 
+first party who are directly involved in the performance of this Agreement and who need to know the 
+information, and shall ensure that such personnel are (i) aware of and shall comply with these 
+obligations as to confidentiality and (ii) have signed a written confidentiality agreement with terms at 
+least as restrictive as those in this Agreement. 
+
+4.4	Neither party shall, and each party shall procure that its personnel do not, use any of the other party's 
+Confidential Information received otherwise than for the purposes of this Agreement.
+
+4.5	Nothing in this clause 4 shall prevent the Licensor from using any techniques, ideas or know-how 
+gained during the performance of the Agreement in the course of its normal business to the extent 
+that this use does not result in a disclosure of the other party's Confidential Information or an 
+infringement of IPR.
+
+4.6	This clause 4 shall only apply to Confidential Information disclosed pursuant to this Agreement.  
+Nothing in this Agreement shall change either Party's obligations regarding Confidential Information 
+disclosed pursuant to the Non-Disclosure Agreement signed [date], whether such disclosure 
+happened before, or happens after, the Effective Date of this Agreement.
+
+5	FEES
+
+5.1	The Licensee shall pay to the Licensor a (once-off or periodic) license fee in respect of access to the 
+Materials and the rights and licenses contained in this Agreement in the amount and payable at the 
+frequency and otherwise on the terms specified in paragraph 2 of Schedule 1.
+
+5.2	All sums payable under this license are exclusive of VAT or any applicable local sales taxes, for which 
+the Licensee shall be responsible.
+
+5.3	If the Licensee fails to make any payment due to the Licensor under this agreement by the due date 
+for payment, then, without limiting the Licensor's remedies under clause 7, the Licensee shall pay 
+interest on the overdue amount at the rate of 1.5% per month. Such interest shall accrue on a daily 
+basis from the due date until actual payment of the overdue amount, whether before or after 
+judgment. The Licensee shall pay the interest together with the overdue amount.
+
+6	DISCLAIMER & LIMITATIONS ON LIABILITY
+
+6.1	The Materials are provided "as is" and without warranty of any kind and all conditions, warranties or 
+other terms which might have effect between the parties or be implied or incorporated into this 
+license or any collateral contract, whether by statute, common law or otherwise, are hereby 
+excluded, including the implied conditions, warranties or other terms as to satisfactory quality, 
+merchantability, fitness for purpose, non-infringement of third party rights, the use of reasonable skill 
+and care, or arising from any course of dealing or usages of trade.
+
+6.2	Subject to the provisions of clause 6.1:
+
+6.2.1	neither Party shall in any circumstances have any liability for any losses or damages which 
+may be suffered by the other Party (or any person claiming under or through the other 
+Party), whether the same are suffered directly or indirectly or are immediate or 
+consequential, and whether the same arise in contract, tort (including negligence) or 
+otherwise howsoever, which fall within any of the following categories:
+
+(a)	special damage even if the other Party was aware of the circumstances in which such 
+special damage could arise;
+
+(b)	loss of profits;
+
+(c)	loss of anticipated savings;
+
+(d)	loss of business opportunity;
+
+(e)	loss of goodwill;
+
+(f)	loss or corruption of data,
+
+provided that, subject to clause 6.2.2, this clause 6.2.1 shall not prevent claims for loss of or 
+damage to the other Party's tangible property or any other claims for direct financial loss 
+that are not excluded by any of categories (a) to (f) inclusive of this clause 6.2.1;
+
+6.2.2	except for breach of the provisions of this Agreement regarding the Licensor's IPRs or 
+Confidential Information, the total liability of the each Party, whether in contract, tort 
+(including negligence) or otherwise and whether in connection with this license or any 
+collateral contract, shall in no circumstances exceed a sum equal to the amounts becoming 
+due and payable by Licensee to Licensor under this Agreement in the twelve months prior to 
+the accrual of any claim for damages  and
+
+6.2.3	each Party agrees that, in entering into this license, either it did not rely on any 
+representations (whether written or oral) of any kind or of any person other than those 
+expressly set out in this license or (if it did rely on any representations, whether written or 
+oral, not expressly set out in this license) that it shall have no remedy in respect of such 
+representations and (in either case) the Licensor shall have no liability in any circumstances 
+otherwise than in accordance with the express terms of this license.
+
+6.3	The exclusions in clauses 6.1 and 6.2 shall apply to the maximum extent permissible at law, but  does 
+not exclude liability for:
+
+6.3.1	death or personal injury caused by the negligence of the liable Party, its officers, employees, 
+contractors or agents;
+
+6.3.2	fraud or fraudulent misrepresentation;
+
+6.3.3	any other liability which may not be excluded by law.
+
+6.4	Neither Party will be liable to the other Party for (a) any indirect, special, consequential or purely 
+economic loss or damage, or (b) any loss of profits, turnover, business opportunities, or damage to 
+goodwill (whether direct or indirect).
+
+6.5	The Parties expressly agree that if any limitation or provision contained or expressly referred to in this 
+clause 6 is held to be invalid under any law, it will be deemed omitted to that extent, and if any Party 
+becomes liable for loss or damage to which that limitation or provision applied, that liability will be 
+subject to the remaining limitations and provisions set out in this clause 6.
+
+6.6	Nothing in this clause 6 shall act to reduce or affect a Party's general duty to mitigate its loss.
+
+7	TERMINATION
+
+7.1	The Licensor may terminate this Agreement if the Licensee is in material breach of its obligations 
+hereunder by giving the Licensee 14 days' written notice specifying the breach and requiring its 
+remedy. If the Licensee fails to remedy the breach this Agreement shall terminate on the date which 
+is 14 days after the date of the notice.
+
+7.2	Either Party may terminate this Agreement by written notice to the other Party at any time during the 
+period up to the Initial Evaluation Date with our without cause. The entitlement to so terminate this 
+Agreement under this clause 7.2 shall lapse and be of no further effect after the Initial Evaluation 
+Date.
+
+7.3	The termination of this Agreement in accordance with clause 7 shall not prejudice or affect any right 
+of action or remedy which accrued or thereafter accrues to either Party. All provisions which survive 
+this Agreement (expressly or impliedly) shall remain in force and in effect following this termination 
+or its expiry.
+
+7.4	On termination or expiry of this Agreement (a) each Party shall (at the owner's option) return or 
+destroy all material and information which it possesses or controls and was supplied to it by the other 
+in connection with this Agreement; and (b) each Party shall provide written certification that it has 
+complied with this clause and shall ensure that any sub-contractors and agents which it may have 
+engaged do the same regarding any such material and information which they possessed and/or 
+controlled.
+
+7.5	Termination of this Agreement shall be without prejudice to any sub-licenses granted by the Licensee 
+to end-users in accordance with this Agreement which shall continue in accordance with their 
+relevant terms.
+
+8	MISCELLANEOUS
+
+8.1	The Licensee agrees and acknowledges that the Licensor's Software licensed under this Agreement is 
+subject to export and import restrictions in certain countries and agrees to comply with all applicable 
+international and national laws that apply to the Licensor's Software including the Irish export and 
+local import administration regulations, as well as end-user, end-use and destination restrictions 
+issued by Irish and other governments. 
+
+8.2	The Licensee shall not assign, novate or otherwise dispose of, transfer, sub-contract or create any 
+trust in relation to any or all of its rights and obligations under this Agreement without the prior 
+written consent of the Licensor, provided however that in the event of Licensee's merger, 
+consolidation, or purchase, Licensee may transfer or assign this Agreement to the new owner without 
+the prior written consent of Licensor provided that the new owner agrees in writing to be bound to 
+the obligations of the Licensee under this Agreement. 
+
+8.3	The rights and remedies provided by this Agreement may be waived only in writing by the relevant 
+Representative in a manner that expressly states that a waiver is intended, and such waiver shall only 
+be operative with regard to the specific circumstances referred to.
+
+8.4	Unless a right or remedy of the Licensee is expressed to be an exclusive right or remedy, the exercise 
+of it by the Licensee is without prejudice to the Licensee's other rights and remedies.  Any failure to 
+exercise or any delay in exercising a right or remedy by either Party shall not constitute a waiver of 
+that right or remedy or of any other rights or remedies.
+
+8.5	The rights and remedies provided by this Agreement are cumulative and, unless otherwise provided in 
+this Agreement, are not exclusive of any right or remedies provided at law or in equity or otherwise 
+under this Agreement.
+
+8.6	Nothing in this Agreement is intended to create a partnership, or legal relationship of any kind that 
+would impose liability upon one Party for the act or failure to act of the other Party, or to authorise 
+either Party to act as agent for the other party.  Neither Party shall have authority to make 
+representations, act in the name of, or on behalf of, or to otherwise bind the other Party.
+
+8.7	If any provision of this Agreement is held invalid, illegal or unenforceable for any reason by any court 
+of competent jurisdiction, such provision shall be severed without effect to the remaining provisions.  
+If a provision of this Agreement that is fundamental to the accomplishment of the purpose of this 
+Agreement is held to any extent to be invalid, the Licensor and the Licensee shall immediately 
+commence good faith negotiations to remedy that invalidity.
+
+8.8	Each Party undertakes at the request of the other Party, and at the cost of the requesting Party to do 
+all acts and execute all documents which may be necessary to give effect to the meaning of this 
+Agreement.
+
+8.9	This Agreement, together with the documents referred to in it, constitutes the entire agreement and 
+understanding between the Parties in respect of the matters dealt with in it and supersedes, cancels 
+and nullifies any previous agreement between the Parties in relation to such matters notwithstanding 
+the terms of any previous agreement or arrangement expressed to survive termination.
+
+8.10	Each of the Parties acknowledges and agrees that in entering into this Agreement and the documents 
+referred to in it does not rely on, and shall have no remedy in respect of, any statement, 
+representation, warranty or undertaking (whether negligently or innocently made) other than as 
+expressly set out in this Agreement. The only remedy available to either party in respect of any such 
+statements, representation, warranty or understanding shall be for breach of contract under the 
+terms of this Agreement.
+
+8.11	This Agreement shall be governed by and construed in accordance with the laws of the State of 
+California, USA and each Party agrees to submit to the exclusive venue and jurisdiction of the federal 
+and state courts located in San Francisco, California, provided however that either Party may petition 
+the courts of any applicable jurisdiction, without need to post bond or other security, for urgent 
+injunctive or other similar relief to prevent breach of this Agreement by the other.
+?
+Schedule 1
+
+1.
+To facilitate the development of an interoperability software interface for facilitating the 
+incorporation of Licensor Silicon into Licensee products.
+2.
+
+A once off Movidius.Org Access License Fee of US$500,000 which is payable 60 Days after the 
+Effective Date (the Initial Evaluation Date).
+3.
+An Annual Renewal License Fee of US $70,000 first payable on the anniversary of the 
+Effective Date and annually thereafter.
+
+
+
+?
+Schedule 2
+
+
+
+
+
+Sublicense Conditions imposed by MCCI Corporation ("MCCI") on the MCCI Component. 
+
+(i)	Licensee acknowledges that although copyrighted, the MCCI Component is unpublished  
+and embodies valuable trade secrets proprietary to MCCI; 
+(ii)	Licensee is prohibited from copying the MCCI Component, except for a reasonable 
+number of back-up copies.
+(iii)	Licensee is prohibited from providing access to the MCCI Component to any person for 
+any purpose other than processing Licensee's internal data for the authorized use of the 
+MCCI Component.
+(iv)	Licensee acknowledges that the MCCI Component is classified as "Restricted Computer 
+Software" and the US Government may acquire only "Restricted Rights" in the MCCI 
+Component and its documentation.
+(v)	Licensee is prohibited from exporting, licensing or otherwise transferring the MCCI 
+Component in any form to any country where such transfer is prohibited by the United 
+States Export Administration Act, or any successor legislation, or in violation of the laws 
+of any other country.  
+
+Sublicense Conditions imposed by MulticoreWare, Inc. ("MCW") on the MCW Component. 
+
+(i)	Licensee shall reproduce, on all copies of the MCW Component, and not remove, alter or 
+obscure in any way, all proprietary rights notices of MCW, or its contributors or 
+licensors, on or within the copies of the MCW Component and any applicable 
+documentation.
+
+Sublicense Conditions imposed by CODECart Alliance S.R.L. ("CCA") on the CCA Component. 
+
+(i)	Licensee is not allowed to copy, adapt, reverse engineer, decompile, disassemble, 
+modify, adapt or make error corrections to the CCA Component in whole or in part. 
+(ii)	Licensee may not use the CCA Component and related information to create any know-
+how, algorithms, procedures or software whose expression is substantially similar to 
+that of the CCA Component, nor use the foregoing in any manner that would be 
+restricted by any IPRs subsisting in the CCA Component other than to the extent such 
+IPRs are expressly licensed hereunder to Licensee.  
+(iii)	Licensee may use the CCA Component only in order to conduct in-house checks for 
+security breaches or debugging which may affect system level stability.
+
+
+Sublicense Conditions imposed by standard provisions applicable to open source 
+(i)	Licensee will be bound to those open source terms and conditions that are accepted by 
+Licensee Authorized Personnel in the course of registering through the Access Registration 
+Terms & Conditions at https://www.movidius.org/authorisation/terms  
+
+
+
+[signature page follows]
+
+Whereof this Agreement has been duly executed by the Parties.
+
+
+
+
+Duly authorized for and on behalf of 
+MOVIDIUS LIMITED
+
+_________________________
+Signature 
+_________________________
+Print name
+_________________________
+Title
+_________________________
+Date
+
+
+
+
+Duly authorized for and on behalf of 
+[FULL CORPORATE NAME]
+
+_________________________
+Signature 
+_________________________
+Print name
+_________________________
+Title
+_________________________
+Date
+

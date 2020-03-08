@@ -1,0 +1,33 @@
+#!/bin/sh
+RPM_INSTALL_PREFIX=/opt/intel
+replace_pattern() 
+{
+    local pattern="$1"
+    local file="$2"
+    local expression="$3"
+    echo $pattern
+    echo $file
+    echo $expression
+    sed "s@<${pattern}>@$expression@g" "$file" 2>>/dev/null 1>"$file.new"
+    result=$?
+    if [ "x$result" = "x0" ]; then
+        cat "$file.new" > "$file"
+        rm -f "$file.new" 1>>/dev/null 2>&1
+    else
+        rm -f "$file.new" 1>>/dev/null 2>&1
+    fi
+}
+ 
+RPM_INSTALL_PREFIX=${RPM_INSTALL_PREFIX}
+
+INSTALL_SED_STR="INSTALLDIR"
+replace_pattern "$INSTALL_SED_STR" "$RPM_INSTALL_PREFIX/openvino_2019.3.376/bin/setupvars.sh" "$RPM_INSTALL_PREFIX/openvino_2019.3.376"
+
+LINK_NAME="${RPM_INSTALL_PREFIX}/openvino"
+TARGET="${RPM_INSTALL_PREFIX}/openvino_2019.3.376"
+if [ -h "${LINK_NAME}" ]; then
+    rm -f "${LINK_NAME}"
+fi;
+ln -sf "${TARGET}" "${LINK_NAME}"
+
+exit 0

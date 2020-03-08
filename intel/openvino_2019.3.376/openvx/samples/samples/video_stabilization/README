@@ -1,0 +1,159 @@
+------------------------------------------------------------------------------
+                       OpenVX* Video Stabilization Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+
+  1 - Sample Description
+  2 - System Requirements for Building and Running the Sample
+  3 - Sample Directory
+  4 - Basic Command-line Options
+
+1 Sample Description
+------------------------------------------------------------------------------
+
+Video stabilization sample is an educational OpenVX* sample that includes a
+simple pipeline, based on Harris corners detection, for detection
+of feature points and optical flow for tracking points.
+
+The following OpenVX topics are covered in the sample:
+  - How to express user-defined logic as a part of a graph via user nodes
+  - Usage of vx_delay to pass data from one graph iteration to another
+  - Difference between virtual and non-virtual data objects and their role in
+    the graph
+  - How to obtain and interpret OpenVX performance information
+
+Additionally, the sample features basic interoperability with OpenCV through
+data sharing. OpenCV is used for reading the data from a video file. It is also
+demonstrated how to plug debug visualization with OpenCV right into data
+processed by the graph.
+
+The sample can work in two modes (controlled by a special knob in the command line):
+- as a console application. In this mode, you can use the sample as a benchmark
+  to measure performance and provides necessary performance instrumentation right
+  inside the code.
+- as an application with GUI windows.
+
+Refer to the sample User's Guide (PDF) for details.
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+
+The sample directory has the following structure:
+
+  +-- video_stabilization (sample directory)
+      |
+      +-- video_stabilization.cpp (entry point to the application)
+      |
+      +-- cmdoptions.cpp/hpp (definition of all command line parameters)
+      |
+      +-- video_stabilization_openvx.cpp (OpenVX implementation)
+      |
+      +-- video_stabilization_opencv.cpp (reference OpenCV implementation)
+      |
+      +-- video_stabilization_user_nodes_lib.cpp/hpp
+      |                      (user nodes interface vx and vxu functions)
+      |
+      +-- video_stabilization_user_nodes_module.cpp
+      |                      (user nodes kernels, validators and other
+      |                      required functions as required by OpenVX for
+      |                      user nodes)
+      |
+      +-- debug_visualization_lib.cpp/hpp
+      |                      (functions to draw feature points and motion
+      |                      vectors on OpenCV and OpenVX images)
+      |
+      +-- video_stabilization_core.cpp/hpp
+      |                      (transform estimation and tracking state
+      |                      management which implement basic video
+      |                      stabilization functionality)
+      |
+      +-- CMakeLists.txt    (CMake file for the sample)
+      |
+      +-- toy_flower.mp4 (default input to the sample, 1280x720 RGB video)
+      |
+      +-- sample_video_stabilization_user_guide.pdf (detailed sample
+      |                                             User's Guide)
+      |
+      +-- README (this readme file)
+
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+
+To get detailed list of command-line parameters, run the sample with -h
+(--help):
+
+    $ ./video_stabilization --help
+
+By default the sample loads and processes the toy_flower.mp4, in the sample
+directory. You can change the input with -i/--input option.
+Example command-line:
+
+    $ ./video_stabilization --input your_video_file_name
+
+Visualization can be disable with the --no-show parameter. If the parameter is
+not set then visualization is enabled and GUI windows show the result video.
+
+Debug output can be enabled with the --debug-output parameter. In this case
+feature points and motion vectors are shown by enabling a special user node in
+the OpenVX pipeline
+
+Example command-line to enable debug output and show the result in a GUI window:
+
+    $ ./video_stabilization --debug-output
+
+To switch between OpenVX and OpenCV implementations, use the --impl parameter,
+which accepts opencv or openvx alternatives. The default is the OpenVX
+implementation. To run OpenCV implementation use:
+
+    $ ./video_stabilizaton --impl opencv
+
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual 
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a 
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in 
+development.  All information provided here is subject to change without 
+notice. Contact your Intel representative to obtain the latest forecast, 
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as 
+errata which may cause deviations from published specifications. Current 
+characterized errata are available on request. 
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S. 
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

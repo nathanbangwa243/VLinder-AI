@@ -1,0 +1,148 @@
+------------------------------------------------------------------------------
+                       OpenVX* Campera Tampering Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+
+  1 - Sample Description
+  2 - System Requirements for Building and Running the Sample
+  3 - Sample Directory
+  4 - Basic Command-line Options
+  5 - GStreamer E2E pipeline
+
+1 Sample Description
+------------------------------------------------------------------------------
+
+Campera Tampering sample is an educational OpenVX* sample that includes a
+simple pipeline, based on background subtraction MOG2, dilate, erode, dilate
+and connected component labeling for camera tampering.
+
+Connect component labeling is a regular algorithm in camera tampering, after
+background subtraction step. OpenCV may have functions which have similar
+functionality. This algorithm is adopted as the code is simple, and it's easier
+for GPU implementation in the future.
+
+The following OpenVX topics are covered in the sample:
+  - How to implement camera tampering using OpenVX
+  - How to create camera tampering workload library which can work with
+    Gstreamer
+
+Additionally, the sample features basic interoperability with OpenCV through
+data sharing. OpenCV is used for reading the data from input image file, and
+writing output image file.
+
+The sample can work as a console application.
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+
+The sample directory has the following structure:
+
+  +-- camera_tampering (sample directory)
+      |
+      +-- camera_tampering.cpp (entry point to the application)
+      |
+      +-- cmdoptions.cpp/hpp (definition of all command line parameters)
+      |
+      +-- camera_tampering_user_nodes_lib.cpp/hpp
+      |                      (user nodes interface vx and vxu functions)
+      |
+      +-- camera_tampering_user_nodes_module.cpp
+      |                      (user nodes kernels, validators and other
+      |                      required functions as required by OpenVX for
+      |                      user nodes)
+      |
+      +-- camera_tampering_core.cpp/hpp
+      |                      (connected component labeling which implement
+      |                      post processing of camera tampering functionality)
+      |
+      +-- libwl_ctd.cpp/h (workload library plugin to Gstreamer)
+      |
+      +-- CMakeLists.txt    (CMake file for the sample)
+      |
+      +-- ctd_md.mp4   (default input to sample, 640x360 video)
+      |
+      +-- sample_camera_tampering_user_guide.pdf (detail sample User's Guide)
+      |
+      +-- hetero.config.default.txt / hetero.config.gpu_offload.txt
+      |				(user could assign different configuration in the sample)
+      |
+      +-- README (this readme file)
+
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+
+To get detailed list of command-line parameters, run the sample with -h
+(--help):
+
+    $ ./camera_tampering --help
+
+Complete command-line arguments:
+
+    $ ./camera_tampering --input inputFileName --output outputFileName --ct_enable enableFlag --ct_radtio_threshold thresholdValue --ct_scale processImageSizeRatio  --hetero-config configFileName
+
+Example command-line arguments:
+
+    $ ./camera_tampering --input ctd_occ.mp4 --output VID_640x360_result.mp4 --ct_enable 1 --ct_radio_threshold 0.01 --ct_scale 1 --hetero-config hetero.config.cpu-all.txt
+
+5 GStreamer E2E pipeline
+------------------------------------------------------------------------------
+
+The file libwl_ctd.h and libwl_ictd.cpp are used to build OpenVX based Camera
+Tampering workload library. Gstreamer can work with this workload library to
+enable Gstreamer E2E solution(for example, camera input YUV data-> Gstreamer
+camera tampering plug-in -> Gstreamer video sink or decoded YUV data->Gstreamer
+camera tampering plug-in -> Gstreamer video sink)
+
+After building camera tampering sample, run "make install", 2 libraries will be
+generated (libwl_ctd.so and libcamera_tampering_user_nodes_module.so). Please
+add the path of these libraries to LD_LIBRARY_PATH
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without
+limitation, the implied warranties of merchantability, fitness for a
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in
+development.  All information provided here is subject to change without
+notice. Contact your Intel representative to obtain the latest forecast,
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as
+errata which may cause deviations from published specifications. Current
+characterized errata are available on request.
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S.
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

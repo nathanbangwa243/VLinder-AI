@@ -1,0 +1,25 @@
+#!/bin/sh
+RPM_INSTALL_PREFIX=/opt/intel
+
+PSET_DIR="$HOME/intel/.pset/$(hostname)"
+if [ "0" = "$(id -u)" -a -w "/dev" ]; then
+    PSET_DIR="/opt/intel/.pset"
+fi
+
+rm -rf "${PSET_DIR}/markers/1571685660188" 2>&1 1>/dev/null
+rm -rf "${PSET_DIR}/settings/1571685660188" 2>&1 1>/dev/null
+
+RPM_FILENAME="intel-openvino-base-pset-2019.3.376-2019.3-376.noarch.rpm"
+DB_FILE="$PSET_DIR/settings/cached_uninstaller.db"
+if sed -i.bk "/^${RPM_FILENAME}=.*/d" $DB_FILE 2>/dev/null; then
+    rm -rf "${DB_FILE}.bk" 2>&1 1>/dev/null
+fi
+
+if [ ! -s "$DB_FILE" ]; then
+	rm -f "$DB_FILE" 2>&1 1>/dev/null
+fi
+find "${PSET_DIR}" -depth -type d -empty -exec rmdir {} \;
+
+if [ -d "${PSET_DIR}" ]; then
+    rmdir --ignore-fail-on-non-empty "${PSET_DIR}" 2>&1 1>/dev/null
+fi

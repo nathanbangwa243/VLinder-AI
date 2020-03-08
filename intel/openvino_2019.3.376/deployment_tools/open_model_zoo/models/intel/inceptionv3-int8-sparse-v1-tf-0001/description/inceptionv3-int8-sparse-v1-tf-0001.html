@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<link rel="stylesheet" href="../../intel_styles.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+    <div id="bannerblock">
+      <img src="../../intel_logo.png" class="intellogo">
+      <h1 class="title">Overview of OpenVINO&trade; toolkit Pre-trained Models</h1>
+    </div>
+  </div>
+<div id="contentblock">
+<h1 id="inceptionv3-int8-sparse-v1-tf-0001">inceptionv3-int8-sparse-v1-tf-0001</h1>
+<h2 id="use-case-and-high-level-description">Use Case and High-Level Description</h2>
+<p>This is the Inception v3 model that is designed to perform image classification. The model has been pretrained on the ImageNet image database and then pruned to <strong>30.9%</strong> of sparsity and quantized to INT8 fixed-point precision using so-called Quantization-aware training approach implemented in TensorFlow framework. The sparsity is represented by zeros inside the weights of Convolutional and Fully-conneted layers. For details about the original floating point model, check out the <a href="https://arxiv.org/pdf/1512.03385.pdf">paper</a>.</p>
+<p>The model input is a blob that consists of a single image of &quot;1x299x299x3&quot; in BGR order.</p>
+<p>The model output for <code>inceptionv3-int8-sparse-v1-tf-0001</code> is the usual object classifier output for the 1001 different classifications matching those in the ImageNet database (the first item represents the background).</p>
+<h2 id="example">Example</h2>
+<h2 id="specification">Specification</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Type</td>
+<td align="left">Classification</td>
+</tr>
+<tr class="even">
+<td align="left">GFLOPs</td>
+<td align="left">11.469</td>
+</tr>
+<tr class="odd">
+<td align="left">MParams</td>
+<td align="left">23.819</td>
+</tr>
+<tr class="even">
+<td align="left">Source framework</td>
+<td align="left">TensorFlow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accuracy">Accuracy</h2>
+<p>The quality metrics calculated on ImageNet validation dataset is 78.65% accuracy top-1.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Accuracy top-1 (ImageNet)</td>
+<td align="left">78.65%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance">Performance</h2>
+<h2 id="input">Input</h2>
+<p>Image, shape - <code>1,299,299,3</code>, format is <code>B,H,W,C</code> where:</p>
+<ul>
+<li><code>B</code> - batch size</li>
+<li><code>H</code> - height</li>
+<li><code>W</code> - width</li>
+<li><code>C</code> - channel</li>
+</ul>
+<p>Channel order is <code>BGR</code></p>
+<h2 id="output">Output</h2>
+<p>Object classifier according to ImageNet classes, shape -<code>1,1001</code>, output data format is <code>B,C</code> where:</p>
+<ul>
+<li><code>B</code> - batch size</li>
+<li><code>C</code> - predicted probabilities for each class in [0, 1] range</li>
+</ul>
+</div>
+</body>
+</html>

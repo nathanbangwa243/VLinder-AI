@@ -1,0 +1,129 @@
+------------------------------------------------------------------------------
+                       OpenVX* Heterogeneous Basic Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+
+  1 - Sample Description
+  2 - System Requirements for Building and Running the Sample
+  3 - Sample Directory
+  4 - Basic Command-line Options
+
+
+1 Sample Description
+------------------------------------------------------------------------------
+
+This is an illustrative sample that serves as an introduction to Khronos OpenVX 1.1
+Targets API. The Targets API is used to assign each particular node in
+an OpenVX graph to a particular target overriding the default run-time choice.
+This API enables heterogeneous usages of the platforms with OpenVX support
+maximizing efficiency of the hardware utilization.
+
+The sample uses a short OpenVX graph to showcase basic usages of
+the API. The graph is doing 3-channel Canny Edge Detection processing assigning
+each channel, R, G and B to different targets, CPU, GPU or IPU.
+
+
+                -->  extractRNode(CPU)  -->  cannyRNode(CPU)  --
+               /                                                \
+   ovxImgRGB  ---->  extractGNode(GPU)  -->  cannyGNode(GPU)  ---->  combineNode
+               \                                                /
+                -->  extractBNode(IPU)  -->  cannyBNode(IPU)  --
+
+
+Refer to the sample User's Guide (PDF) for details.
+
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+
+The sample directory has the following structure:
+
+ -- hetero_basic
+    |
+    |-- CMakeLists.txt       (CMake file for the sample)
+    |
+    |-- hetero_basic.cpp     (source code of the sample)
+    |
+    |-- toy_flower_512x512.mp4 (default video file for processing)
+    |
+    |-- sample_hetero_basic_user_guide.pdf (detailed sample User's Guide)
+    |
+    `-- README               (this readme file)
+
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+
+To get detailed list of command-line parameters, run the sample with -h
+(--help):
+
+    $ ./hetero_basic --help
+
+By default the sample loads and processes the toy_flower_512x512.mp4.
+You can change the input with -i/--input option.
+Example command-line:
+
+    $ ./hetero_basic --input your_video_file_name
+
+Visualization can be disable with the --no-show parameter. If the parameter is
+not set then visualization is enabled and GUI windows show the result video.
+
+This command disables visualization:
+
+    $ ./hetero_basic --no-show
+
+The output video stream can be forwarded to a video file. The name of the
+output video file is specified with -o/--output option:
+
+    $ ./hetero_basic --output video.out.mp4
+
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual 
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a 
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in 
+development.  All information provided here is subject to change without 
+notice. Contact your Intel representative to obtain the latest forecast, 
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as 
+errata which may cause deviations from published specifications. Current 
+characterized errata are available on request. 
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S. 
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

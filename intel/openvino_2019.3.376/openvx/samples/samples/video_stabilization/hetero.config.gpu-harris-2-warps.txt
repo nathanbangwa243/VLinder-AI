@@ -1,0 +1,12 @@
+vxColorConvertNode          intel.cpu
+vxChannelExtractNode        intel.cpu
+vxHarrisCornersNode         intel.gpu
+vxGaussianPyramidNode       intel.cpu
+vxOpticalFlowPyrLKNode      intel.cpu
+vxChannelExtractNode(R)     intel.cpu
+vxChannelExtractNode(G)     intel.cpu
+vxChannelExtractNode(B)     intel.cpu
+vxWarpAffineNode(R)         intel.gpu
+vxWarpAffineNode(G)         intel.gpu
+vxWarpAffineNode(B)         intel.cpu
+vxChannelCombineNode(warp)  intel.cpu

@@ -1,0 +1,125 @@
+------------------------------------------------------------------------------
+                       OpenVX* Census Transform Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+1   Sample Description
+2   System Requirements for Building and Running the Sample
+3   Sample Directory
+4   Basic Command-line Options
+
+
+1 Sample Description
+------------------------------------------------------------------------------
+The Census Transform sample demonstrates usage of the OpenVX* for acceleration
+of image processing tasks. It explains the basics of OpenVX development step by step.
+
+It also shows basic interoperability with OpenCV, which is used for loading
+and displaying of the images.
+
+Specifically, the sample implements CENTRIST visual descriptor calculation:
+
+RGB(in)->|convert|->YUV->|channel extract|->Y->|Sobel3x3|->X,Y gradients->|Magnitude|->Edges gray scale image->
+->|Census Transform User Node|->CT gray scale image->|Histogram|->CENTRIST values
+
+
+Refer to the sample User's Guide (PDF) for details.
+
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+The sample directory has the following structure:
+
+  +-- census_transform (a separated directory per sample)
+      |
+      +-- main.cpp (main sample file with code)
+      +-- census_transform_impl.c (Census Transform core function SSE implementation)
+      +-- census_transform_lib.c (Census Transform user node definition)
+      +-- census_transform_module.c (Census Transform user node implementation)
+      +-- census_transformtiled_lib.c (Census Transform Tiled user node definition)
+      +-- census_transformtiled_module.c (Census Transform Tiled user node implementation)
+      +-- vx_usercensus_nodes.h (Census Transform nodes and helper functions declarations)
+      +-- vx_censustransform_opencl_lib.cpp (Census Transform Tiled user node definition (device kernel ext.))
+      +-- vx_censustransform_opencl_module.cpp (Census Transform user node implementation (device kernel ext.))
+      +-- vx_censustransform_opencl_impl.cl (Census Transform OpenCL device kernel implementation)
+      +-- CMakeLists.txt    (CMake file for the sample)
+      +-- toy_flower.mp4 (default input video sequence to the sample)
+      +-- sample_census_transform_user_guide.pdf (detailed sample User's Guide)
+      +-- README (this readme file)
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+
+To get detailed list of command-line parameters, run the sample with '-h'
+('--help'):
+
+    $ ./census_transform  --help
+
+By default the sample loads and processes the low_contrast_vga.jpg, in the
+sample directory.
+- To change the input, use '-i' ( or '--input')
+
+- To disable visualization, use '-n' ('--no-show')
+This option is useful when you running outside the GUI environment.
+
+- Debug output can be enabled with the --debug-output parameter. In this case
+performance window that shows relative execution time for each node is displayed.
+
+- To use Census Transform user node without Intel advanced tiling extension, use '--no-tiled'
+
+- To use Census Transform OpenCL device kernel user node (doesn't support tiling now), use '--opencl --no-tiled'
+
+- To setup number of frames to be processed, use the '-f' ('--max-frames')
+
+Example command-line:
+    $ ./census_transform  -i toy_flower.mp4 -f 100 --no-tiled
+
+
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual 
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a 
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in 
+development.  All information provided here is subject to change without 
+notice. Contact your Intel representative to obtain the latest forecast, 
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as 
+errata which may cause deviations from published specifications. Current 
+characterized errata are available on request. 
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S. 
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

@@ -1,0 +1,6 @@
+-----------------------------
+Third Party Attributions
+-----------------------------
+See details for Intel(R) Graphics Compute Runtime for OpenCL(TM) here: https://github.com/intel/compute-runtime
+
+

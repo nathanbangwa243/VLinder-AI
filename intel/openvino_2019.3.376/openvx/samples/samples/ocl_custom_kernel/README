@@ -1,0 +1,134 @@
+------------------------------------------------------------------------------
+                       OpenVX* OpenCL Custom Kernel Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+
+  1 - Sample Description
+  2 - System Requirements for Building and Running the Sample
+  3 - Sample Directory
+  4 - Basic Command-line Options
+
+
+1 Sample Description
+------------------------------------------------------------------------------
+
+This sample demonstrates an experimental Intel extension that enables using
+custom OpenCL kernels as OpenVX user kernels.
+
+The sample creates a graph consisting of a single node that is implemented
+as an OpenCL user kernel.
+
+The code consists of the following parts:
+
+  - OpenCL program with a single OpenCL kernel, a kernel which implements
+    an illustrative RGB image processing -- a good starting point to produce
+    user's own OpenCL code.
+
+  - Host code that creates an OpenVX device kernel library as an OpenVX
+    representative for the OpenCL program.
+
+  - Registering of OpenCL kernel as an OpenVX custom kernel.
+
+  - Creating and running an OpenVX graph with a OpenCL user kernel node.
+
+Refer to the sample User's Guide (PDF) for details.
+
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+
+The sample directory has the following structure:
+
+  +-- ocl_custom_kernel         (sample directory)
+      |
+      +-- ocl_custom_kernel.cpp (complete host code)
+      |
+      +-- source.cl             (OpenCL program that is used as a device
+      |                          library in OpenVX)
+      |
+      +-- CMakeLists.txt        (CMake file for the sample)
+      |
+      +-- toy_flower.mp4        (default input to the sample,
+      |                          1280x720 RGB video)
+      |
+      +-- sample_ocl_custom_kernel_user_guide.pdf (detailed sample User's Guide)
+      |
+      +-- README                (this readme file)
+
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+
+To get detailed list of command-line parameters, run the sample with -h
+(--help):
+
+    $ ./ocl_custom_kernel --help
+
+By default the sample loads and processes the toy_flower.mp4, in the sample
+directory. You can change the input with -i/--input option.
+Example command-line:
+
+    $ ./ocl_custom_kernel --input your_video_file_name
+
+Visualization can be disable with the --no-show parameter. If the parameter is
+not set then visualization is enabled and two pop-up GUI windows show input
+frame and output image after OpenCL processing.
+
+Alternatively, output video stream can be stored to a file with --output option,
+for example:
+
+    $ ./ocl_custom_kernel --output output_file_name
+
+The output file video format and other properties (frame rate, codec) is chosen
+by input file.
+
+
+Disclaimer and Legal Information
+------------------------------------------------------------------------------
+No license (express or implied, by estoppel or otherwise) to any intellectual 
+property rights is granted by this document.
+
+Intel disclaims all express and implied warranties, including without 
+limitation, the implied warranties of merchantability, fitness for a 
+particular purpose, and non-infringement, as well as any warranty arising from
+ course of performance, course of dealing, or usage in trade.
+
+This document contains information on products, services and/or processes in 
+development.  All information provided here is subject to change without 
+notice. Contact your Intel representative to obtain the latest forecast, 
+schedule, specifications and roadmaps.
+
+The products and services described may contain defects or errors known as 
+errata which may cause deviations from published specifications. Current 
+characterized errata are available on request. 
+
+Intel and the Intel logo are trademarks of Intel Corporation in the U.S. 
+and/or other countries.
+
+* Other names and brands may be claimed as the property of others.
+
+OpenVX and the OpenVX logo are trademarks of Khronos.
+
+Copyright (c) 2017 Intel Corporation. All rights reserved.
+

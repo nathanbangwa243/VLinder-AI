@@ -1,0 +1,113 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <title>Get Started with OpenVINO™ toolkit for Linux*</title>
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+  <div id="top">
+    <div id="titlearea">
+      <div id="projectalign">
+       <div id="projectname"><a href="https://software.intel.com/en-us/openvino-toolkit" class="homelink-id">OpenVINO Toolkit</a></div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="header">
+    <div class="headertitle">
+      <div class="title">Get Started with OpenVINO™ toolkit for Linux* OS</div>  
+    </div>
+  </div><!--header-->
+
+  <div class="contents">
+      <div class="textblock">
+      <h2>About the Intel® Distribution of OpenVINO™ toolkit</h2>
+          <p>The Intel® Distribution of OpenVINO™ toolkit quickly deploys applications and solutions that emulate human vision. Based on Convolutional Neural Networks (CNN), the toolkit extends computer vision (CV) workloads across Intel® hardware, maximizing performance. The Intel® Distribution of OpenVINO™ toolkit includes the Intel® Deep Learning Deployment Toolkit (Intel® DLDT).</p>
+          <p>The Intel® Distribution of OpenVINO™ toolkit for Linux*:</p>
+          <ul>
+          <li>Enables CNN-based deep learning inference on the edge</li>
+          <li>Supports heterogeneous execution across an Intel® CPU, Intel® Integrated Graphics, Intel® Movidius™ Neural Compute Stick, Intel® Neural Compute Stick 2 and Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</li>
+          <li>Speeds time-to-market via an easy-to-use library of computer vision functions and pre-optimized kernels</li>
+          <li>Includes optimized calls for computer vision standards, including OpenCV*, OpenCL™, and OpenVX*</li>
+          </ul>
+          <h3>Included with the Installation</h3>
+          <p>The following components are installed by default:</p>
+          <table class="doxtable">
+          <tr>
+          <th align="left">Component </th><th align="left">Description  </th></tr>
+          <tr>
+          <td align="left"><a class="el" href="https://docs.openvinotoolkit.org/latest/_docs_MO_DG_Deep_Learning_Model_Optimizer_DevGuide.html">Model Optimizer</a> </td><td align="left">This tool imports, converts, and optimizes models, which were trained in popular frameworks, to a format usable by Intel tools, especially the Inference Engine. <br />
+            <blockquote class="doxtable"><strong>NOTE:</strong> Popular frameworks include Caffe*, TensorFlow*, MXNet*, and ONNX*.</blockquote> </td></tr>
+          <tr>
+          <td align="left"><a class="el" href="https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Deep_Learning_Inference_Engine_DevGuide.html">Inference Engine</a> </td><td align="left">This is the engine that runs a deep learning model. It includes a set of libraries for an easy inference integration into your applications. </td></tr>
+          <tr>
+          <td align="left">Drivers and runtimes for OpenCL™ version 2.1 </td><td align="left">Enables OpenCL on the GPU/CPU for Intel® processors. </td></tr>
+          <tr>
+          <td align="left">Intel® Media SDK </td><td align="left">Offers access to hardware accelerated video codecs and frame processing. </td></tr>
+          <tr>
+          <td align="left"><a href="https://docs.opencv.org/">OpenCV*</a> </td><td align="left">OpenCV* community version compiled for Intel® hardware. </td></tr>
+          <tr>
+          <td align="left"><a href="https://software.intel.com/en-us/OpenVINO-OVX-guide">OpenVX*</a> </td><td align="left">Intel's implementation of OpenVX* optimized for running on Intel® hardware (CPU, GPU, IPU). </td></tr>
+          <tr>
+          <td align="left">Pre-trained models </td><td align="left">A set of Intel's pre-trained models for learning and demo purposes or to develop deep learning software. </td></tr>
+          <tr>
+          <td align="left">Sample Applications </td><td align="left">A set of simple console applications demonstrating how to use the Inference Engine in your applications. For additional information about building and running the samples, refer to the <a class="el" href="https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html">Inference Engine Samples Overview</a>. </td></tr>
+          </table>
+          <h2>System Requirements</h2>
+          <p>This guide covers the Linux* version of the Intel® Distribution of OpenVINO™ toolkit that does not include FPGA support. For the toolkit that includes FPGA support, see <a class="el" href="OpenVINO-GetStarted-Linux.html">Get Started with OpenVINO™ toolkit for Linux* with FPGA Support</a>.</p>
+          <p><b>Hardware</b></p>
+          <ul>
+          <li>6th-8th Generation Intel® Core™</li>
+          <li>Intel® Xeon® v5 family</li>
+          <li>Intel® Xeon® v6 family</li>
+          <li>Intel® Pentium® processor N4200/5, N3350/5, N3450/5 with Intel® HD Graphics</li>
+          <li>Intel® Movidius™ Neural Compute Stick</li>
+          <li>Intel® Neural Compute Stick 2</li>
+          <li>Intel® Vision Accelerator Design with Intel® Movidius™ VPUs</li>
+          </ul>
+          <p><b>Processor Notes:</b></p>
+          <ul>
+          <li>Processor graphics are not included in all processors. See <a href="https://ark.intel.com/#@Processors">Processors specifications</a> for information about your processor.</li>
+          <li>A chipset that supports processor graphics is required if you're using an Intel Xeon processor. See <a href="https://ark.intel.com/#@Chipsets">Chipset specifications</a> for information about your chipset.</li>
+          </ul>
+          <p><b>Operating Systems</b></p>
+          <ul>
+          <li>Ubuntu* 16.04 long-term support (LTS), 64-bit</li>
+          <li>CentOS* 7.4 or higher, 64-bit</li>
+          <li>Yocto Project* Poky Jethro* v2.0.3, 64-bit (for target only)</li>
+          </ul>
+
+          <h2>Install Intel® Distribution of OpenVINO™ toolkit</h2>
+          <p>To install and configure the Intel® Distribution of OpenVINO™ toolkit for Linux, follow the instructions from the <a href="https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html">Installation Guide</a>.</p>
+          
+          <blockquote class="doxtable">
+          <p><b>IMPORTANT</b>:<br />
+          </p><ul>
+          <li>All steps in this guide are required unless otherwise stated.<br />
+          </li>
+          <li>In addition to the downloaded package, you must install dependencies and complete configuration steps. </li>
+          </ul>
+          </blockquote>
+
+          <h2>Build and Run Sample Applications</h2>
+          <p>To build and run Inference Engine sample applications and demos, refer to the <a href="https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html">Inference Engine Samples Overview.</a></p>
+
+          <h2>Pre-Trained Models</h2>
+          <p>OpenVINO™ toolkit provides a set of pre-trained models to expedite development of your high-performance deep learning inference applications. Use these free pre-trained models instead of training your own models to speed-up the development and production deployment process.</p>
+          
+          <p>To learn about pre-trained models for the OpenVINO™ toolkit, refer to:
+          <ul>
+            <li><a href="https://docs.openvinotoolkit.org/latest/_docs_docs_Pre_Trained_Models.html">latest stable pre-trained models documentation</a> OR</li>
+            <li><a href="https://github.com/opencv/open_model_zoo/blob/master/intel_models/index.md">most recent models documentation.</a></li>
+          </ul>
+                    
+          <h2>Documentation</h2>
+          <p>Learn the OpenVINO documentation and how-to's at <a href="https://docs.openvinotoolkit.org">https://docs.openvinotoolkit.org</a>.</p>
+      </div>
+  </div>
+</body>
+</html>

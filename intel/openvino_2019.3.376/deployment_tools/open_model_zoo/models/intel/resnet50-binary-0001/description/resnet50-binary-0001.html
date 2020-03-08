@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+<link rel="stylesheet" href="../../intel_styles.css" type="text/css" />
+</head>
+<body>
+<div id="banner">
+    <div id="bannerblock">
+      <img src="../../intel_logo.png" class="intellogo">
+      <h1 class="title">Overview of OpenVINO&trade; toolkit Pre-trained Models</h1>
+    </div>
+  </div>
+<div id="contentblock">
+<h1 id="resnet50-binary-0001">resnet50-binary-0001</h1>
+<h2 id="use-case-and-high-level-description">Use Case and High-Level Description</h2>
+<p>This is a classical classification network for 1000 classes trained on ImageNet. The difference is that most convolutional layers were replaced by binary once that can be implemented as XNOR+POPCOUN operations. Only input, final and shortcut layers were kept as FP32, all the rest convolutional layers are replaced by BinaryConvolution layers.</p>
+<h2 id="specification">Specification</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Image size</td>
+<td align="left">224x224</td>
+</tr>
+<tr class="even">
+<td align="left">fp32 conv MFlops</td>
+<td align="left">960</td>
+</tr>
+<tr class="odd">
+<td align="left">bin conv MI1ops</td>
+<td align="left">7218</td>
+</tr>
+<tr class="even">
+<td align="left">Source framework</td>
+<td align="left">PyTorch*</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accuracy">Accuracy</h2>
+<p>The quality metrics calculated on ImageNet validation dataset is 70.69% accuracy</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Metric</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Accuracy top-1 (ImageNet)</td>
+<td align="left">70.69%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance">Performance</h2>
+<h2 id="inputs">Inputs</h2>
+<p>A blob with a BGR image in the format: [B, C=3, H=224, W=224], where:</p>
+<ul>
+<li>B – batch size</li>
+<li>C – number of channels</li>
+<li>H – image height</li>
+<li>W – image width</li>
+</ul>
+<p>It is supposed that input is BGR in 0..255 range</p>
+<h2 id="outputs">Outputs</h2>
+<p>The output is a blob with the shape [B, C=1000].</p>
+<h2 id="legal-information">Legal Information</h2>
+<p>[*] Other names and brands may be claimed as the property of others.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "version": "0.2",
+  "components": {
+    "setupvars": {
+      "mandatory" : "yes",
+      "files": [
+        "bin"
+      ]
+    },
+    "openvino_dependencies": {
+      "mandatory" : "yes",
+      "files": [
+        "install_dependencies/install_openvino_dependencies.sh"
+      ]
+    },
+    "ie_core": {
+      "group": ["ie"],
+      "files": [
+        "deployment_tools/inference_engine/lib/intel64/libinference_engine.so",
+        "deployment_tools/inference_engine/lib/intel64/plugins.xml",
+        "deployment_tools/inference_engine/external/tbb"
+      ]
+    },
+    "cpu": {
+      "ui_name": "Inference Engine Runtime for Intel(R) CPU",
+      "group": ["ie"],
+      "dependencies" : ["ie_core"],
+      "files": [
+        "deployment_tools/inference_engine/lib/intel64/libMKLDNNPlugin.so",
+        "deployment_tools/inference_engine/external/mkltiny_lnx"
+      ]
+    },
+    "gpu": {
+      "ui_name": "Inference Engine Runtime for Intel(R) Processor Graphics",
+      "group": ["ie"],
+      "dependencies" : ["ie_core"],
+      "files": [
+        "deployment_tools/inference_engine/lib/intel64/cache.json",
+        "deployment_tools/inference_engine/lib/intel64/cldnn_global_custom_kernels",
+        "deployment_tools/inference_engine/lib/intel64/libclDNNPlugin.so"
+      ]
+    },
+    "vpu": {
+      "ui_name": "Inference Engine Runtime for Intel(R) Movidius(tm) VPU",
+      "group": ["ie"],
+      "dependencies" : ["ie_core"],
+      "files": [
+        "deployment_tools/inference_engine/external/97-myriad-usbboot.rules",
+        "deployment_tools/inference_engine/lib/intel64/MvNCAPI-ma2450.mvcmd",
+        "deployment_tools/inference_engine/lib/intel64/MvNCAPI-ma2x8x.mvcmd",
+        "deployment_tools/inference_engine/lib/intel64/libmyriadPlugin.so",
+        "deployment_tools/inference_engine/lib/intel64/myriad_compile",
+        "deployment_tools/inference_engine/lib/intel64/myriad_perfcheck",
+        "deployment_tools/inference_engine/lib/intel64/vpu_custom_kernels"
+      ]
+    },
+    "gna": {
+      "ui_name": "Inference Engine Runtime for Intel(R) Gaussian Neural Accelerator",
+      "group": ["ie"],
+      "dependencies" : ["ie_core"],
+      "files": [
+        "deployment_tools/inference_engine/external/gna",
+        "deployment_tools/inference_engine/lib/intel64/libGNAPlugin.so"
+      ]
+    },
+    "hddl": {
+      "ui_name": "Inference Engine Runtime for Intel(R) Vision Accelerator Design with\n\t   Intel(R) Movidius(tm) VPUs",
+      "group": ["ie"],
+      "dependencies" : ["ie_core"],
+      "files": [
+        "deployment_tools/inference_engine/lib/intel64/libHDDLPlugin.so",
+        "deployment_tools/inference_engine/external/hddl"
+      ]
+    }
+  }
+}

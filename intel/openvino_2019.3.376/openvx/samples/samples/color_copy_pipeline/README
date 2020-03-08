@@ -1,0 +1,123 @@
+------------------------------------------------------------------------------
+                       OpenVX* Color Copy Pipeline Sample
+                                    README
+------------------------------------------------------------------------------
+This README provides sample description and build/execution instructions.
+
+CONTENTS:
+1   Sample Description
+2   System Requirements for Building and Running the Sample
+3   Sample Directory
+4   Basic Command-line Options
+
+
+1 Sample Description
+------------------------------------------------------------------------------
+color copy pipeline is written to be as free of external dependencies (libtiff, etc.) as possible,
+ to make it more portable across various targets, etc. For this reason, it is written
+ to take as input a "raw" RGB 8bpp image in 'pixel' interleaved format, and size which is known
+ at compile time. The default size is 5120x6592 (defined at the top of pipelinecontrol.cpp).
+Likewise, if -outfile is used to save the resultant image, the output will be saved as a
+ "raw" 1 bpp CMYK in 'pixel' interleaved format.
+
+color copy pipeline implements 3 copy-paths in increasing complexity. High1, High3, and High6.
+ High1 - "RGB-to-Lab" -> "7x7 Filter" -> "Lightness/Darkness" -> "Lab-to-CMYK" -> "Error Diffusion"
+ High3 - "RGB-to-Lab" -> "7x7 Filter" -> "Lightness/Darkness" -> "Lab-to-CMYK" -> "Error Diffusion" -> "Basic Edge Detection" -> "Basic Enhancement of neutral edges"
+ High6 - "RGB-to-Lab" -> "7x7 Filter" -> "Lightness/Darkness" -> "Lab-to-CMYK" -> "Error Diffusion" -> "Basic Edge Detection" -> "Advanced Enhancement of neutral edges"
+
+
+Refer to the sample User's Guide (PDF) for details.
+
+
+2 System Requirements for Building and Running the Sample
+------------------------------------------------------------------------------
+
+You need the following software to compile the sample:
+  - Ubuntu* 16.04, CentOS 7.3 or Windows 10 operating system
+  - CMake 2.8.12 and higher
+  - gcc 4.8.4 and higher (Ubuntu only)
+  - GStreamer* 1.0 (Ubuntu only)
+  - Microsoft Visual Studio 2015 (Windows only)
+  
+Note, that not all samples support build under Windows.
+
+See the README file in the sample root directory for information on installing 
+and running the samples and system requirements for target platforms.
+
+
+3 Sample Directory
+------------------------------------------------------------------------------
+The sample directory has the following structure:
+
++-- color_copy_pipeline (a separated directory per sample)
+    |-- CMakeLists.txt (CMake file for the sample)
+    |-- lab2cmykparams_17x17x17.h (CMYK lookup table)
+    |-- lightnessdarknesscontrast_params.h (lookup table)
+    |-- main.cpp (Main sample file with code)
+    |-- pipelinecontrol.cpp (Color copy pipeline class implementation)
+    |-- pipelinecontrol.h (Color copy pipeline class declaration)
+    |-- README (This readme file)
+    |-- rgb2labparams_17x17x17.h (RGB2LAB lookup table)
+    |-- vxbackgroundsuppress.cpp (Backgraound suppress user kernel)
+    |-- vxbackgroundsuppress_lib.cpp (Backgraound suppress user node)
+    |-- vxcalculategradient.cpp (Calculate gradient user kernel)
+    |-- vxcalculategradient_lib.cpp (Calculate gradient user node)
+    |-- vxneutralpixeldetection.cpp (Neutral pixel detection user kernel)
+    |-- vxneutralpixeldetection_lib.cpp (Neutral pixel detection user node)
+    |-- vxpack8to1.cpp (Pack user kernel)
+    |-- vxpack8to1_lib.cpp (Pack user node)
+    |-- vxproduceedgek.cpp (Produce edgeK user kernel)
+    |-- vxproduceedgek_lib.cpp (Produce edgeK user node)
+    |-- vxpublishkernels.cpp (Publish user kernel)
+    |-- vxremovefringe.cpp (Remove fringe user kernel)
+    |-- vxremovefringe_lib.cpp (Remove fringe user node)
+    |-- vxsimplethreshold.cpp (Simple threshold user kernel)
+    |-- vxsimplethreshold_lib.cpp (Simple threshold user node)
+    |-- vxunpack1to8.cpp (Unpack user kernel)
+    |-- vxunpack1to8_lib.cpp (Unpack user node)
+    |-- vxsymm7x7_opencl_lib.cpp (Symm7x7 user node)
+    |-- vxsymm7x7_opencl_module.cpp (Symm7x7 user kernel (device kernel ext.))
+    |-- vxsymm7x7_opencl_impl.cl (Symm7x7 OpenCL device kernel implmentation)
+    `-- vx_user_pipeline_nodes.h (Color copy pipeline user nodes declaration)
+
+
+
+4 Basic Command-line Options
+------------------------------------------------------------------------------
+NOTE: command line parameters (keys and values) are case-sensitive.
+Running Pipeline:
+
+to see the usage, run the color_copy_pipeline executable without any arguments,
+ or with -h
+./color_copy_pipeline
+
+the usage is:
+Pipeline 0 Usage:
+-h help
+--input input.raw (5120x6592 RAW RGB (8bpp)).
+[--high1] Run the High-1 Quality Image Path.
+[--high3] Run the High-3 Quality Image Path.
+[--high6] Run the High-6 Quality Image Path.
+[--output out.raw] (5120x6592 RAW CMYK (1bpp))
+[--nthreads x] (How many CPU Worker threads OpenVX runtime is allowed to use.
+                Default is the number of CPU cores detected on the system running)
+[--tileheight] set the tile height in # of scanlines. Default is 16.
+[ --lightness x ] (where x ranges -3 to 3. default setting is 0).
+[ --contrast x ] (where x ranges -2 to 2. default setting is 0).
+[ --gpuboxfilter] Offload Box Filters to GPU.
+[ --gpusobelfilter] Offload Sobel Filters to GPU.
+[ --gpudilateandor] Offload Dilate,And,Or, subgraph to GPU.
+[ --gpurgb2lab] Offload RGB-to-CIELab (Tetra. Int.) to GPU.
+[ --gpulab2cmyk] Offload Lab-to-CMYK (Tetra. Int.) to GPU.
+[ --ipusymm7x7 ] Offload Symmetrical 7x7 Filter to IPU.
+[ --gpusymm7x7 ] Offload Symmetrical 7x7 Filter to GPU.
+[ --max-frames ] Number of iterations input frame to be processed. Performance metrics are averaged over this number.
+[ --memfactor x ] Memory optimization level (where x 0(default), 4 or 8).
+[ --tilepool ] Use experimental TilePool feature (reduce memory usage).
+[ --clnontiled ] Disable OpenCL tiling on GPU.
+
+For example, to run color_copy_pipeline in 'high6' mode, the following can be executed:
+./color_copy_pipeline --input low_contrast_5120x6592_I444.raw --high6 --output outputCMYK.raw
+
+
+
