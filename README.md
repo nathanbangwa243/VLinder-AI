@@ -15,5 +15,3 @@ In the long term VLinder will also provide information about the level of conges
 
 
 VLinder, Know where to drive and where to park quietly 
-
-Translated with www.DeepL.com/Translator (free version)
