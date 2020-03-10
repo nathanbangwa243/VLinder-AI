@@ -16,8 +16,8 @@ INPUT_STREAM = "testInputs/test_video.mp4"
 print(os.path.exists(INPUT_STREAM))
 
 
-CPU_EXTENSION = os.path.join(os.getcwd(), "intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so")
-PVB_MODEL = os.path.join(os.getcwd(), "models/person-vehicle-bike-detection-crossroad-0078.xml")
+CPU_EXTENSION = "./intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so"
+PVB_MODEL = "./models/person-vehicle-bike-detection-crossroad-0078.xml"
 
 
 CLASSES = ["person", "bike", "vehicule"]
