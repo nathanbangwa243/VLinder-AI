@@ -11,7 +11,11 @@ import sys
 
 import os
 
-INPUT_STREAM = "test_video.mp4"
+INPUT_STREAM = "testInputs/test_video.mp4"
+
+print(os.path.exists(INPUT_STREAM))
+
+
 CPU_EXTENSION = os.path.join(os.getcwd(), "intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so")
 PVB_MODEL = os.path.join(os.getcwd(), "models/person-vehicle-bike-detection-crossroad-0078.xml")
 
@@ -42,7 +46,7 @@ def get_args():
     # -- Create the descriptions for the commands
     i_desc = "The location of the input file"
     d_desc = "The device name, if not 'CPU'"
-    p_desc = "Punish statistics, if not 'NO'"
+    p_desc = "Publish statistics, if not 'NO'"
 
     # -- Create the arguments
     parser.add_argument("-i", help=i_desc, default=INPUT_STREAM)
@@ -130,8 +134,20 @@ def infer_on_video(args, model):
     width = int(cap.get(3))
     height = int(cap.get(4))
 
+    _, outVideoName = os.path.split(args.i)
+    outVideoName, _ = os.path.splitext(outVideoName)
+    print(outVideoName)
+    outVideoName = "OUT_{outVideoName}.mp4".format(outVideoName=outVideoName)
+    print(outVideoName)
+
+    outputPath = os.path.join(os.getcwd(), "outputs")
+
+    outVideoName = os.path.join(outputPath, outVideoName)
+
+    print(outVideoName)
+
     # out writer video
-    out = cv2.VideoWriter('out.mp4', 0x00000021, 30, (width,height))
+    out = cv2.VideoWriter(outVideoName, 0x00000021, 30, (width,height))
 
 
     # Process frames until the video ends, or process is exited
@@ -165,38 +181,28 @@ def infer_on_video(args, model):
             #Send the class names and speed to the MQTT server
             # publish class
             if args.p == "YES":
-                # person counter
-                personCount = {
+                # publish person counter
+                personCount = json.dumps({
                     "personCount": stats[0]
-                }
+                })
 
-                # bike counter
-                personCount = {
+                client.publish("person_counter", personCount)
+
+
+                # publish bike counter
+                personCount = json.dumps({
                     "bikeCount": stats[1]
-                }
+                })
 
-                # vehicule counter
-                personCount = {
+                client.publish("bike_counter", personCount)
+
+                # publish vehicule counter
+                personCount = json.dumps({
                     "vehiculeCount": stats[2]
-                }
+                })
 
-                speed = randint(50,70)
-                dataClass = {
-                    "class_names": "class_names",
-                }
-                dataClass = json.dumps(dataClass)
-                
-                client.publish("class", dataClass)
-                
-                # publish speed
-                dataSpeed = {
-                    "speed": speed
-                }
-                
-                dataSpeed = json.dumps(dataSpeed)
-                
-                client.publish("speedometer", dataSpeed)
-        
+                client.publish("vehicule_counter", personCount)
+
         if args.p == "YES":
             #Send frame to the ffmpeg server
             sys.stdout.buffer.write(out_frame)  
