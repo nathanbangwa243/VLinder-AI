@@ -1,6 +1,6 @@
 # VLinder AI
 
-VLinder AI is an intelligent road traffic monitoring system. 
+VLinder AI is an intelligent road traffic and parking monitoring system. 
 
 VLinder AI allows to provide interesting statistics by observing road traffic or parking in real time. 
 
@@ -15,3 +15,5 @@ In the long term VLinder will also provide information about the level of conges
 
 
 VLinder, Know where to drive and where to park quietly 
+
+
