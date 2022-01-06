@@ -1,4 +1,4 @@
-celery==4.3
+celery==5.2.2
 defusedxml>=0.6.0
 eventlet>=0.24.1
 Flask>=1.0.2
